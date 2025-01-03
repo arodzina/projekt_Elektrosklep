@@ -13,15 +13,15 @@ namespace Elektrosklep
         public int Dysk { get; set; }
         public string KartaGraficzna { get; set; }
 
-        public Laptop(int id, string nazwa, double cena, string opis, string procesor, int ram, int dysk, string kartaGraficzna)
-            : base(id, nazwa, cena, opis)
+        public Laptop( string nazwa, double cena, string opis, string procesor, int ram, int dysk, string kartaGraficzna)
+            : base( nazwa, cena, opis)
         {
             Procesor = procesor;
             RAM = ram;
             Dysk = dysk;
             KartaGraficzna = kartaGraficzna;
         }
-
+        public Laptop() { }
         // Implementacja metody abstrakcyjnej
         public override void WyswietlSzczegoly()
         {

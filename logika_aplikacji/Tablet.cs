@@ -12,14 +12,15 @@ namespace Elektrosklep
         public string SystemOperacyjny { get; set; }
         public bool CzyRysik { get; set; } // Czy obsługuje rysik
 
-        public Tablet(int id, string nazwa, double cena, string opis, double wyswietlacz, string systemOperacyjny, bool czyRysik)
-            : base(id, nazwa, cena, opis)
+        public Tablet( string nazwa, double cena, string opis, double wyswietlacz, string systemOperacyjny, bool czyRysik)
+            : base( nazwa, cena, opis)
         {
             Wyswietlacz = wyswietlacz;
             SystemOperacyjny = systemOperacyjny;
             CzyRysik = czyRysik;
         }
 
+        public Tablet() { }
         // Implementacja metody abstrakcyjnej
         public override void WyswietlSzczegoly()
         {

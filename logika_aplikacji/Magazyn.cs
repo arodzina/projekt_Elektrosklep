@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Elektrosklep
 {
+
+   
     public class Magazyn
     {
-        private List<Produkt> produkty; // Lista produktów w magazynie
+        
+        
+   
+        public List<Produkt> produkty; // Lista produktów w magazynie
 
         public Magazyn()
         {
@@ -98,6 +104,49 @@ namespace Elektrosklep
                 {
                     Console.WriteLine($"{produkt.Nazwa}, Cena: {produkt.Cena:c}");
                 }
+            }
+        }
+
+        // Metoda do pobierania produktów według kategorii
+        public List<Produkt> PobierzProduktyZKategorii(string kategoria)
+        {
+            // Filtruje produkty według kategorii
+            return produkty.Where(p => p.GetType().Name == kategoria).ToList();
+        }
+        // Metoda zapisująca magazyn do pliku XML
+        public void ZapiszDoXml(string sciezka)
+        {
+            try
+            {
+                // Używamy XmlSerializer do serializacji listy produktów
+               
+                using StreamWriter sw = new(sciezka);
+                XmlSerializer xs = new(typeof(Magazyn),new Type[] {typeof(Laptop),typeof(Smartfon),typeof(Tablet)});
+                xs.Serialize(sw,this);
+                Console.WriteLine("Magazyn został zapisany do pliku XML.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Błąd podczas zapisu do pliku XML: {ex.Message}");
+            }
+        }
+        // Wczytaj magazyn z pliku XML
+        public static Magazyn? OdczytXml(string sciezka)
+        {
+            try
+            {
+                XmlSerializer xs = new(typeof(Magazyn), new Type[] { typeof(Laptop), typeof(Smartfon), typeof(Tablet) });
+
+                using (FileStream fs = new FileStream(sciezka,FileMode.Open))
+                {
+                    Magazyn magazynOdczytany=(Magazyn)xs.Deserialize(fs);
+                    return magazynOdczytany;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Błąd podczas wczytywania z pliku XML: {ex.Message}");
+                return null;
             }
         }
     }
