@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Button Name="btnZaloguj" Content="Zaloguj się" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" Click="btnZaloguj_Click"/>
+        <Button Name="btnZarejestruj" Content="Zarejestruj się" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="btnZarejestruj_Click"/>
+        <Button Name="btnGosc" Content="Kontynuuj jako gość" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Click="btnGosc_Click"/>
     </Grid>
 </Window>
+    
+   
+

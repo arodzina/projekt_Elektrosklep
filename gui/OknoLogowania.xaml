@@ -1,0 +1,26 @@
+﻿<Window x:Class="gui.OknoLogowania"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gui"
+        mc:Ignorable="d"
+        Title="Logowanie" Height="358" Width="371">
+    <Grid Margin="0,0,10,-6">
+        <!-- Etykieta z instrukcją dla użytkownika -->
+        <Label Content="Wpisz swój e-mail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+
+        <!-- TextBox na e-mail -->
+        <TextBox Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="40" Margin="50,80,0,0"/>
+
+        <!-- Etykieta z instrukcją dla użytkownika -->
+        <Label Content="Wpisz swoje hasło" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,120,0,0"/>
+
+        <!-- TextBox na hasło -->
+        <PasswordBox Name="txtHaslo" Margin="50,150,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
+
+        <!-- Przycisk Zaloguj -->
+        <Button Content="Zaloguj się" VerticalAlignment="Top" Height="40" Margin="90,230,0,0" HorizontalAlignment="Left" Width="170"/>
+    </Grid>
+</Window>
+

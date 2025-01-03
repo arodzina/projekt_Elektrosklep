@@ -1,0 +1,15 @@
+﻿<Window x:Class="gui.MenuSklepu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gui"
+        mc:Ignorable="d"
+        Title="MenuSklepu" Height="450" Width="800">
+    <Grid>
+         <Label Content="Wybierz kategorię" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+        <Button Name="btnLaptopy" Content="Laptopy" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" Click="btnLaptopy_Click"/>
+        <Button Name="btnTelefony" Content="Telefony" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="btnTelefony_Click"/>
+        <Button Name="btnTablety" Content="Tablety" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Click="btnTablety_Click"/>
+    </Grid>
+</Window>
