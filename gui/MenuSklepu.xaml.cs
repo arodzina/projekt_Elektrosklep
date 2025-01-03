@@ -19,30 +19,43 @@ namespace gui
     /// </summary>
     public partial class MenuSklepu : Window
     {
+        // Zmienna do przechowywania wybranej kategorii
+        private string wybranaKategoria;
+
         public MenuSklepu()
         {
             InitializeComponent();
         }
+
+        // Obsługa przycisku "Laptopy"
         private void btnLaptopy_Click(object sender, RoutedEventArgs e)
         {
-            ListaProduktow lista = new ListaProduktow("Laptopy");
-            lista.Show();
-            this.Hide();
+            wybranaKategoria = "Laptopy";
+            OtworzListeProduktow();
         }
 
+        // Obsługa przycisku "Telefony"
         private void btnTelefony_Click(object sender, RoutedEventArgs e)
         {
-            ListaProduktow lista = new ListaProduktow("Telefony");
-            lista.Show();
-            this.Hide();
+            wybranaKategoria = "Telefony";
+            OtworzListeProduktow();
         }
 
+        // Obsługa przycisku "Tablety"
         private void btnTablety_Click(object sender, RoutedEventArgs e)
         {
-            ListaProduktow lista = new ListaProduktow("Tablety");
+            wybranaKategoria = "Tablety";
+            OtworzListeProduktow();
+        }
+
+        // Metoda do otwarcia okna z listą produktów
+        private void OtworzListeProduktow()
+        {
+            ListaProduktow lista = new ListaProduktow(wybranaKategoria);
             lista.Show();
             this.Hide();
         }
     }
+
 }
 

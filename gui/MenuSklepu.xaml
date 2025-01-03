@@ -5,11 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
-        Title="MenuSklepu" Height="450" Width="800">
+        Title="Menu Sklepu" Height="450" Width="800" Background="LightGray">
     <Grid>
-         <Label Content="Wybierz kategorię" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
-        <Button Name="btnLaptopy" Content="Laptopy" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" Click="btnLaptopy_Click"/>
-        <Button Name="btnTelefony" Content="Telefony" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="btnTelefony_Click"/>
-        <Button Name="btnTablety" Content="Tablety" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Click="btnTablety_Click"/>
+        <!-- Etykieta nagłówka -->
+        <Label Content="Wybierz kategorię:" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+
+        <!-- Przycisk Laptopy -->
+        <Button Name="btnLaptopy" Content="Laptopy" Width="200" Height="50" 
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" 
+                Click="btnLaptopy_Click" Background="LightBlue" FontSize="16"/>
+
+        <!-- Przycisk Telefony -->
+        <Button Name="btnTelefony" Content="Telefony" Width="200" Height="50" 
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,160,0,0" 
+                Click="btnTelefony_Click" Background="LightGreen" FontSize="16"/>
+
+        <!-- Przycisk Tablety -->
+        <Button Name="btnTablety" Content="Tablety" Width="200" Height="50" 
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,240,0,0" 
+                Click="btnTablety_Click" Background="LightCoral" FontSize="16"/>
     </Grid>
 </Window>

@@ -19,41 +19,38 @@ namespace gui
     /// </summary>
     public partial class ListaProduktow : Window
     {
-        private string kategoria;
-
         public ListaProduktow(string kategoria)
         {
-            this.kategoria = kategoria;
             InitializeComponent();
+
+            // Ustawienie nagłówka z nazwą kategorii
+            lblKategoria.Content = $"Produkty z kategorii: {kategoria}";
+
+            // Załadowanie listy produktów na podstawie kategorii
+            List<string> produkty = PobierzProdukty(kategoria);
+            listBoxProdukty.ItemsSource = produkty;
         }
 
-        private void ListaProduktow_Load(object sender, RoutedEventArgs e)
+        // Metoda zwracająca listę produktów na podstawie kategorii
+        private List<string> PobierzProdukty(string kategoria)
         {
-            lblKategoria.Content = "Produkty w kategorii: " + kategoria;
-
-            // Przykładowe produkty
-            listBoxProdukty.Items.Clear();
             if (kategoria == "Laptopy")
-            {
-                listBoxProdukty.Items.Add("Laptop 1 - 3000 zł");
-                listBoxProdukty.Items.Add("Laptop 2 - 2500 zł");
-            }
+                return new List<string> { "Laptop Dell XPS", "Laptop HP Spectre", "Laptop MacBook Air" };
             else if (kategoria == "Telefony")
-            {
-                listBoxProdukty.Items.Add("Telefon 1 - 1200 zł");
-                listBoxProdukty.Items.Add("Telefon 2 - 1500 zł");
-            }
+                return new List<string> { "iPhone 14", "Samsung Galaxy S23", "Xiaomi Mi 13" };
             else if (kategoria == "Tablety")
-            {
-                listBoxProdukty.Items.Add("Tablet 1 - 800 zł");
-                listBoxProdukty.Items.Add("Tablet 2 - 1000 zł");
-            }
+                return new List<string> { "iPad Pro", "Samsung Galaxy Tab", "Microsoft Surface Pro" };
+            else
+                return new List<string>();
         }
 
-        private void btnDodajDoKoszyka_Click(object sender, RoutedEventArgs e)
+        // Obsługa przycisku powrotu
+        private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
-            // Logika dodawania do koszyka
-            MessageBox.Show("Dodano do koszyka!");
+            // Powrót do menu sklepu
+            MenuSklepu menu = new MenuSklepu();
+            menu.Show();
+            this.Close();
         }
     }
 }
