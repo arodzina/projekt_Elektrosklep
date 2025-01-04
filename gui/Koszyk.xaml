@@ -8,11 +8,11 @@
         Title="Koszyk" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -37,7 +37,7 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Border>
-        <Label x:Name="LblKoszyk" Content="Koszyk" Grid.Column="1" Grid.Row="1" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="55" FontFamily="Brush Script MT" Margin="110,0,0,0"/>
+        <Label x:Name="LblKoszyk" Content="Koszyk" Grid.Column="1" Grid.Row="1" FontFamily="Rockwell Nova" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" Margin="110,0,0,0"/>
         <ListBox x:Name="LstBKoszyk" Grid.Row="3" Grid.Column="1" SelectionMode="Multiple"/>
         <Button x:Name="BtnUsunK" Content="Usuń z koszyka" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Column="2" Grid.Row="3" Margin="0,29,0,0" Height="38" VerticalAlignment="Top">
             <Button.Background>
@@ -56,9 +56,11 @@
             </Button.Background>
         </Button>
         <Label x:Name="LblPodsumowanie" Content="Podsumowanie zakupów:" Grid.Column="1" Grid.Row="4" FontSize="25" FontFamily="Rockwell Nova"/>
-        <Label x:Name="LblCenaPrzed" Grid.Row="4" Grid.Column="1" Content="Cena przed rabatami:" Margin="376,5,10,63" FontSize="20" FontFamily="Rockwell Nova"/>
-        <Label x:Name="LblCenaPo" Grid.Row="4" Grid.Column="1" Content="Cena ostateczna:" Margin="376,52,10,16" FontSize="20" FontFamily="Rockwell Nova"/>
-        <TextBox x:Name="TxtCenaPrzed" Grid.Row="3" Grid.Column="2" Height="35" Margin="0,164,0,0" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Right" Width="110"/>
-        <TextBox x:Name="TxtCenaPo" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110"/>
+        <Label x:Name="LblCenaPrzed" Grid.Row="4" Grid.Column="1" Content="Cena przed rabatami:" Margin="360,5,5,70" FontSize="20" FontFamily="Rockwell Nova"/>
+        <Label x:Name="LblRabat" Grid.Row="4" Grid.Column="1" Content="Udzielony rabat:" Margin="360,43,5,42" FontSize="20" FontFamily="Rockwell Nova"/>
+        <Label x:Name="LblCenaPo" Grid.Row="4" Grid.Column="1" Content="Cena ostateczna:" Margin="360,78,10,7" FontSize="20" FontFamily="Rockwell Nova"/>
+        <TextBox x:Name="TxtCenaPrzed" Grid.Row="3" Grid.Column="2" Height="35" Margin="0,174,0,0" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>
+        <TextBox x:Name="TxtRabat" Grid.Row="4" Grid.Column="2" Height="35" VerticalAlignment="Center" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>
+        <TextBox x:Name="TxtCenaPo" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>
     </Grid>
 </Window>
