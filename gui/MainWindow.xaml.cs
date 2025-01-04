@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Elektrosklep;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,6 +19,8 @@ namespace gui
     {
         public MainWindow()
         {
+            Magazyn? magazyn = Magazyn.OdczytXml("magazyn.xml");
+            Koszyk koszyk = new();
             InitializeComponent();
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
@@ -36,7 +39,7 @@ namespace gui
 
         private void btnGosc_Click(object sender, RoutedEventArgs e)
         {
-            MenuSklepu menu = new MenuSklepu();
+            Kategoria_produktu menu = new Kategoria_produktu();
             menu.Show();
             this.Hide();
         }

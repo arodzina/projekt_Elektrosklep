@@ -23,7 +23,24 @@ namespace gui
         {
             InitializeComponent();
         }
+        private void ClkLaptop(object sender, RoutedEventArgs e)
+        {
+            ListaProduktow laptopy = new("Laptopy");
+            laptopy.Show();
+            this.Hide();
+        }
+        private void ClkTablet(object sender, RoutedEventArgs e)
+        {
+            ListaProduktow tablety = new("Tablety");
+            tablety.Show();
+            this.Hide();
+        }
+        private void ClkSmart(object sender, RoutedEventArgs e)
+        {
+            ListaProduktow telefony = new("Telefony");
+            telefony.Show();
+            this.Hide();
+        }
 
-       
     }
 }

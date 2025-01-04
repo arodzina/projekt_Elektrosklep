@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elektrosklep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace gui
         public ListaProduktow(string kategoria)
         {
             InitializeComponent();
-
+           
             // Ustawienie nagłówka z nazwą kategorii
             lblKategoria.Content = $"Produkty z kategorii: {kategoria}";
 
@@ -43,7 +44,7 @@ namespace gui
             else
                 return new List<string>();
         }
-
+        
         // Obsługa przycisku powrotu
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
@@ -51,6 +52,14 @@ namespace gui
             MenuSklepu menu = new MenuSklepu();
             menu.Show();
             this.Close();
+        }
+        private void btnDodaj_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(ListBoxItem item in listBoxProdukty.SelectedItems)
+            {
+                //koszyk.DodajProdukt(item); coś trzeba zrobić żeby się dodawało do koszyka
+            }
+            
         }
     }
 }

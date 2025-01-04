@@ -56,7 +56,7 @@
             </Button.Background>
         </Button>
         <Label x:Name="LblPodsumowanie" Content="Podsumowanie zakupów:" Grid.Column="1" Grid.Row="4" FontSize="25" FontFamily="Rockwell Nova"/>
-        <Label x:Name="LblCenaPrzed" Grid.Row="4" Grid.Column="1" Content="Cena przed rabatami:" Margin="360,5,5,70" FontSize="20" FontFamily="Rockwell Nova"/>
+        <Label x:Name="LblCenaPrzed" Grid.Row="4" Grid.Column="1" Content="Cena przed rabatem:" Margin="360,5,5,70" FontSize="20" FontFamily="Rockwell Nova"/>
         <Label x:Name="LblRabat" Grid.Row="4" Grid.Column="1" Content="Udzielony rabat:" Margin="360,43,5,42" FontSize="20" FontFamily="Rockwell Nova"/>
         <Label x:Name="LblCenaPo" Grid.Row="4" Grid.Column="1" Content="Cena ostateczna:" Margin="360,78,10,7" FontSize="20" FontFamily="Rockwell Nova"/>
         <TextBox x:Name="TxtCenaPrzed" Grid.Row="3" Grid.Column="2" Height="35" Margin="0,174,0,0" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>

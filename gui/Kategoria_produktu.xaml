@@ -38,7 +38,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="2" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="60" FontFamily="Brush Script MT"/>
-        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="2" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="110,107,303,10" FontSize="14" FontFamily="Rockwell Nova">
+        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="2" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="110,107,303,10" FontSize="14" FontFamily="Rockwell Nova" Click="ClkLaptop">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -46,7 +46,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="2" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="303,107,110,10">
+        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="2" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="303,107,110,10" Click="ClkTablet">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -54,7 +54,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="203.5,107,203.5,10">
+        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="203.5,107,203.5,10" Click="ClkSmart">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

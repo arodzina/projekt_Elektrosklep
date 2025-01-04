@@ -48,6 +48,16 @@ namespace Elektrosklep
             }
         }
 
+        public double CalkowitaCenaPrzedRabatem()
+        {
+            double suma = 0;
+            foreach (var produkt in produkty)
+            {
+                suma += produkt.Cena;
+            }
+            return suma;
+        }
+
         // Oblicz całkowitą cenę po rabacie
         public double ObliczCalkowitaCene()
         {
