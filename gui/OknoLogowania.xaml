@@ -20,7 +20,7 @@
         <PasswordBox Name="txtHaslo" Margin="50,150,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
 
         <!-- Przycisk Zaloguj -->
-        <Button Content="Zaloguj się" VerticalAlignment="Top" Height="40" Margin="90,230,0,0" HorizontalAlignment="Left" Width="170"/>
+        <Button Click="btnZaloguj_Click" Content="Zaloguj się" VerticalAlignment="Top" Height="40" Margin="90,230,0,0" HorizontalAlignment="Left" Width="170"/>
     </Grid>
 </Window>
 

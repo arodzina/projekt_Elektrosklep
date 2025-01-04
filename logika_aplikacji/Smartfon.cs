@@ -13,15 +13,15 @@ namespace Elektrosklep
         public int PojemnoscBaterii { get; set; } // Pojemność baterii w mAh
         public string Procesor { get; set; }
 
-        public Smartfon(int id, string nazwa, double cena, string opis, double przekatnaEkranu, string aparat, int pojemnoscBaterii, string procesor)
-            : base(id, nazwa, cena, opis)
+        public Smartfon( string nazwa, double cena, string opis, double przekatnaEkranu, string aparat, int pojemnoscBaterii, string procesor)
+            : base( nazwa, cena, opis)
         {
             PrzekatnaEkranu = przekatnaEkranu;
             Aparat = aparat;
             PojemnoscBaterii = pojemnoscBaterii;
             Procesor = procesor;
         }
-
+        public Smartfon() { }
         // Implementacja metody abstrakcyjnej
         public override void WyswietlSzczegoly()
         {

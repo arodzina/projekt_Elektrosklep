@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace Elektrosklep
@@ -14,18 +11,24 @@ namespace Elektrosklep
         public string Nazwa { get; set; }
         public double Cena { get; set; }
         public string Opis { get; set; }
-        public int Id { get; set; }
+        [XmlAttribute]
+        public int Id { get;  set; }  // Zmieniamy dostęp do Id na tylko do odczytu
         public double Rabat { get; set; }
 
+        // Statyczna zmienna do śledzenia ostatniego użytego Id
+        private static int ostatnieId = 0;
+
         // Konstruktor
-        public Produkt(int id, string nazwa, double cena, string opis)
+        public Produkt(string nazwa, double cena, string opis)
         {
-            Id = id;
+            // Przypisanie Id na podstawie ostatniego użytego Id
+            ostatnieId++;
+            Id = ostatnieId;
             Nazwa = nazwa;
             Cena = cena;
             Opis = opis;
         }
-
+        public Produkt() { }
         public double CenaPoRabacie()
         {
             return Cena * (1 - Rabat / 100); // Zwraca cenę po rabacie
@@ -78,4 +81,3 @@ namespace Elektrosklep
         public abstract void WyswietlSzczegoly();
     }
 }
-
