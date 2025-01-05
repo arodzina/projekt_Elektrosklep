@@ -102,7 +102,7 @@ internal class Program
         Console.WriteLine("odczytany:");
         foreach (var produkt in odczytanyMagazyn.produkty) 
         {
-            Console.WriteLine(produkt);
+            Console.WriteLine(produkt.Nazwa);
         }
     }
     // Tworzymy przykładowe produkty

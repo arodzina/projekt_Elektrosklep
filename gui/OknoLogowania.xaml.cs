@@ -28,11 +28,11 @@ namespace gui
             string email = txtEmail.Text;
             string haslo = txtHaslo.Password;
 
-            // Prosta weryfikacja
+           
             if (email == "test@test.com" && haslo == "password123")
             {
-                MenuSklepu menu = new MenuSklepu();
-                menu.Show();
+                Kategoria_produktu kategoria = new Kategoria_produktu();
+                kategoria.Show();
                 this.Hide();
             }
             else
