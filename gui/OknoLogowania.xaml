@@ -6,21 +6,26 @@
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
         Title="Logowanie" Height="358" Width="371">
-    <Grid Margin="0,0,10,-6">
+    <Grid Margin="0,0,0,3"  Background="AliceBlue">
         <!-- Etykieta z instrukcją dla użytkownika -->
-        <Label Content="Wpisz swój e-mail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0"/>
+        <Label Content="Wpisz swój e-mail" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0" FontFamily="Rockwell Nova" FontSize="20"/>
 
         <!-- TextBox na e-mail -->
-        <TextBox Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="40" Margin="50,80,0,0"/>
+        <TextBox Name="txtEmail" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="35" Margin="50,80,0,0"/>
 
         <!-- Etykieta z instrukcją dla użytkownika -->
-        <Label Content="Wpisz swoje hasło" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,120,0,0"/>
+        <Label Content="Wpisz swoje hasło" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,120,0,0" FontFamily="Rockwell Nova" FontSize="20"/>
 
         <!-- TextBox na hasło -->
-        <PasswordBox Name="txtHaslo" Margin="50,150,0,0" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-
-        <!-- Przycisk Zaloguj -->
-        <Button Click="btnZaloguj_Click" Content="Zaloguj się" VerticalAlignment="Top" Height="40" Margin="90,230,0,0" HorizontalAlignment="Left" Width="170"/>
+        <PasswordBox Name="txtHaslo" Margin="50,150,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
+        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Foreground="White" Style="{StaticResource ButtonRound}" Margin="76,221,97,85" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
 

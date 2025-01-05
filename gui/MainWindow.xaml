@@ -7,37 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="AliceBlue">
-
-
-        <!-- Lewa ikona
-            <Image Source="\assets/phone_icon.png" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                   Width="105" Height="158" Margin="104,0,0,0"/>
-             Prawa ikona 
-            <Image Source="\assets/laptop_icon.png" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                   Width="108" Height="167" Margin="633,0,0,0"/>
-         -->
-
-        <!-- Panel z przyciskami 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Name="btnZaloguj" Content="Zaloguj się" Width="200" Height="40" Click="btnZaloguj_Click" 
-                    Background="#4CAF50" Foreground="White" FontSize="16" BorderBrush="#388E3C" BorderThickness="2"
-                    Cursor="Hand" Margin="0,0,0,20"/>
-            <Button Name="btnZarejestruj" Content="Zarejestruj się" Width="200" Height="40" Click="btnZarejestruj_Click" 
-                    Background="#2196F3" Foreground="White" FontSize="16" BorderBrush="#1976D2" BorderThickness="2"
-                    Cursor="Hand" Margin="0,0,0,20"/>
-            <Button Name="btnGosc" Content="Kontynuuj jako gość" Width="200" Height="40" Click="btnGosc_Click" 
-                    Background="#FFC107" Foreground="Black" FontSize="16" BorderBrush="#FF9800" BorderThickness="2"
-                    Cursor="Hand"/>
-        </StackPanel>
-         -->
-
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="110"/>
             <RowDefinition Height="110"/>
             <RowDefinition Height="110"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -61,7 +36,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="1" Grid.Row="1" Content="Witamy w Elektrosklepie!" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Brush Script MT" Height="100" VerticalAlignment="Center"/>
-        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="60,60,60,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click">
+        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,17,67,55" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -69,7 +44,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnZarejestruj" Content="Zarejestruj się" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="60,30,60,30" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
+        <Button x:Name="BtnZarejestruj" Content="Zarejestruj się" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,73,67,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,0">
                     <GradientStop Color="#f33944" Offset="0.0"/>
@@ -77,7 +52,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Grid.Column="1" Grid.Row="4" Foreground="White" Style="{StaticResource ButtonRound}" Margin="60,0,60,60" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
+        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Grid.Column="1" Grid.Row="4" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,19,67,55" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
             <Button.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -85,9 +60,11 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Image Grid.Column="0" Grid.Row="1" Source="/assets\laptop_icon.png" RenderTransformOrigin="-0.392,0.415" Margin="2,50,2,23" Grid.RowSpan="2"/>
-        <Image Grid.Column="1" Grid.Row="2" Source="/assets\smartphone.png" RenderTransformOrigin="-0.392,0.415" Height="105" VerticalAlignment="Top" Margin="392,60,2,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="2" Grid.Row="4" Source="assets\ikonka_smartfon.jpeg" Margin="214,19,214,37"/>
+        <Image Grid.Column="0" Grid.Row="1" Source="/assets\laptop_icon.png"  Margin="2,50,2,23" Grid.RowSpan="2"/>
+        <Image Grid.Column="1" Grid.Row="2" Source="/assets\smartphone.png"  Height="199" VerticalAlignment="Top" Margin="373,11,-26,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="0" Grid.Row="3" Margin="-24,30,376,74" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="/assets\tablet.png"/>
+        <Image Grid.Column="1" Grid.Row="2" Source="/assets\login.png" Margin="84,10,84,107" Grid.RowSpan="2"/>
+
         <DockPanel Grid.Column="0" Grid.Row="0">
             <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
                 <MenuItem Header="Admin" Width="55">
