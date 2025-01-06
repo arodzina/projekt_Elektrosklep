@@ -18,9 +18,10 @@ namespace gui
     public partial class MainWindow : Window
     {
         public Magazyn magazyn = new Magazyn();
-        public Koszyk koszyk = new();
+        public Koszyk Koszyk { get; private set; }
         public MainWindow()
         {
+            Koszyk = new();
             magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
             
             

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elektrosklep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,18 @@ namespace gui
     /// </summary>
     public partial class Koszyk_produktów : Window
     {
-        public Koszyk_produktów()
+        private Koszyk _koszyk;
+        public Koszyk_produktów(Koszyk koszyk)
         {
+            
             InitializeComponent();
+            _koszyk = koszyk;
+            OdswiezListe();
+        }
+        private void OdswiezListe()
+        {
+            LstBKoszyk.ItemsSource = null;
+            LstBKoszyk.ItemsSource = _koszyk.produkty;
         }
     }
 }
