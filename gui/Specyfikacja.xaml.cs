@@ -11,7 +11,7 @@ namespace gui
         private Koszyk _koszyk;
         private Produkt _produkt;
 
-        public Specyfikacja(Produkt produkt, string nazwa, string cena, string opis, Dictionary<string, string> dodatkowePola, Koszyk koszyk)
+        public Specyfikacja( string nazwa, string cena, string opis, Dictionary<string, string> dodatkowePola, Produkt wybrany, Koszyk koszyk )
         {
             
             InitializeComponent();
@@ -19,7 +19,7 @@ namespace gui
             lblNazwa.Text = nazwa;
             lblCena.Text = $"{cena} PLN";
             lblOpis.Text = opis;
-            _produkt = produkt;
+            _produkt= wybrany;
             // Dodaj dynamicznie dodatkowe pola
             foreach (var pole in dodatkowePola)
             {
@@ -42,7 +42,7 @@ namespace gui
             
             string nazwaProduktu = lblNazwa.Text;
             _koszyk.DodajProdukt(_produkt);
-            //MessageBox.Show($"Dodano '{nazwaProduktu}' do koszyka!", "Koszyk", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Dodano '{nazwaProduktu}' do koszyka!", "Koszyk", MessageBoxButton.OK, MessageBoxImage.Information);
             Koszyk_produktów k = new(_koszyk);
             k.Show();
             this.Close();

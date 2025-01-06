@@ -27,24 +27,21 @@ namespace gui
         public ListaProduktow(string kategoria, Koszyk koszyk)
         {
             InitializeComponent();
-           _koszyk = koszyk;
+            _koszyk = koszyk;
             // Ustawienie nagłówka z nazwą kategorii
             lblKategoria.Content = $"Produkty z kategorii: {kategoria}";
 
             // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
             listBoxProdukty.ItemsSource = produkty;
-            
+            //listBoxProdukty.DisplayMemberPath = "Nazwa";
         }
 
-        // Metoda zwracająca listę produktów na podstawie kategorii
+        // Metoda zwracająca listę z nazwami produktów z odowiedniej kategorii
         private List<string> PobierzProdukty(string kategoria)
         {
-
-
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
-
             if (kategoria == "Laptopy")
             {
                 var laptopy = doc.Descendants("Produkt")
@@ -76,16 +73,13 @@ namespace gui
             {
                 return new List<string>();
             }
- 
-            
         }
 
         private void listBoxProdukty_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if (listBoxProdukty.SelectedItem == null)
                 return;
-            
-            Produkt pr = listBoxProdukty.SelectedItem as Produkt;
+            //Produkt pr = listBoxProdukty.SelectedItem as Produkt;
             string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
@@ -93,17 +87,14 @@ namespace gui
             var produkt = doc.Descendants("Produkt")
                              .FirstOrDefault(p => p.Element("Nazwa")?.Value == wybranyProdukt);
 
-           
             if (produkt != null)
             {
                 string nazwa = produkt.Element("Nazwa")?.Value;
                 string cena = produkt.Element("Cena")?.Value;
                 string opis = produkt.Element("Opis")?.Value;
                 string typ = produkt.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value;
-
                 // Dodatkowe pola w zależności od typu produktu
                 Dictionary<string, string> dodatkowePola = new();
-
                 if (typ == "Laptop")
                 {
                     dodatkowePola["Procesor"] = produkt.Element("Procesor")?.Value;
@@ -124,9 +115,18 @@ namespace gui
                     dodatkowePola["System Operacyjny"] = produkt.Element("SystemOperacyjny")?.Value;
                     dodatkowePola["Czy Rysik"] = produkt.Element("CzyRysik")?.Value == "true" ? "Tak" : "Nie";
                 }
-                
-                // Otwórz nowe okno z pełną specyfikacją
-                Specyfikacja specyfikacja = new Specyfikacja(pr, nazwa, cena, opis, dodatkowePola, _koszyk);
+                Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
+                Produkt wybrany = null;
+                foreach (var item in odczytanyMagazyn.produkty)
+                {
+                    if (item.Nazwa == nazwa)
+                    {
+                        wybrany = item;
+                        break;
+                    }
+                }
+                // nowe okno z pełną specyfikacją
+                Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola,wybrany,_koszyk);
                 specyfikacja.Show();
                 this.Close();
             }
