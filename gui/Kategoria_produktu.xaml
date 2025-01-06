@@ -10,8 +10,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="211"/>
+            <RowDefinition Height="89"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -21,7 +21,7 @@
             <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="70"/>
         </Grid.ColumnDefinitions>
-        <Border  Grid.Row ="1" Grid.Column="2" Width="450" CornerRadius="10" BorderThickness="5">
+        <Border  Grid.Row ="1" Grid.Column="2" CornerRadius="10" BorderThickness="5" Margin="25,0,25,0">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -38,7 +38,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="2" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="60" FontFamily="Brush Script MT"/>
-        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="2" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="110,107,303,10" FontSize="14" FontFamily="Rockwell Nova" Click="ClkLaptop">
+        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="21,31,393,28" FontSize="14" FontFamily="Rockwell Nova" Click="ClkLaptop">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -46,7 +46,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="2" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="303,107,110,10" Click="ClkTablet">
+        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="206,31,206,28" Click="ClkTablet">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -54,7 +54,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="203.5,107,203.5,10" Click="ClkSmart">
+        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="386,31,20,28" Click="ClkSmart">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -62,9 +62,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Image Grid.Column="2" Grid.Row="2" Source="assets\ikonka_laptop.jpg" RenderTransformOrigin="-0.392,0.415" Margin="110,14,309,42"/>
-        <Image Grid.Column="2" Grid.Row="2" Source="assets\tablet2.jpg" RenderTransformOrigin="-0.392,0.415" Margin="322,0,130,62" Height="50" VerticalAlignment="Bottom"/>
-        <Image Grid.Column="2" Grid.Row="3" Source="assets\ikonka_smartfon.jpeg" Margin="214,19,214,37"/>
+        <Image Grid.Column="1" Grid.Row="2" Source="assets\laptop2.png" RenderTransformOrigin="-0.392,0.415" Margin="74,72,366,0" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="2" Grid.Row="2" Source="assets\ipad.png" RenderTransformOrigin="-0.392,0.415" Margin="193,84,193,0" Height="114" VerticalAlignment="Top"/>
+        <Image Grid.Column="2" Grid.Row="2" Source="assets\ikonka_smartfon.jpeg" Margin="357,54,71,72" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <DockPanel Grid.Column="0" Grid.Row="0">
             <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
                 <MenuItem Header="Admin" Width="55">

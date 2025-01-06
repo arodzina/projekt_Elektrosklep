@@ -9,7 +9,56 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\ikonka_laptop.jpg" />
+    <None Remove="assets\ikonka_smartfon.jpeg" />
+    <None Remove="assets\ipad.png" />
+    <None Remove="assets\laptop2.png" />
+    <None Remove="assets\laptop_icon.png" />
+    <None Remove="assets\login.png" />
+    <None Remove="assets\phone_icon.png" />
+    <None Remove="assets\smartphone.png" />
+    <None Remove="assets\tablet.png" />
+    <None Remove="assets\tablet2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\phone_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\logika_aplikacji\logika_aplikacji.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\ikonka_laptop.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\ikonka_smartfon.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\ipad.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\laptop2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\laptop_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\login.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\smartphone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\tablet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\tablet2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace gui
 {
@@ -35,22 +36,62 @@ namespace gui
         // Metoda zwracająca listę produktów na podstawie kategorii
         private List<string> PobierzProdukty(string kategoria)
         {
-            if (kategoria == "Laptopy")
-                return new List<string> { "Laptop Dell XPS", "Laptop HP Spectre", "Laptop MacBook Air" };
-            else if (kategoria == "Telefony")
-                return new List<string> { "iPhone 14", "Samsung Galaxy S23", "Xiaomi Mi 13" };
-            else if (kategoria == "Tablety")
-                return new List<string> { "iPad Pro", "Samsung Galaxy Tab", "Microsoft Surface Pro" };
-            else
+            //string sciezkaPliku = "magazyn.xml"; // Ścieżka do pliku XML
+            //Magazyn? magazyn = Magazyn.OdczytXml(sciezkaPliku);
+
+            /*if (magazyn == null)
+            {
+                MessageBox.Show("Nie udało się wczytać danych z pliku XML.");
                 return new List<string>();
+            }
+            */
+
+            string xmlFilePath = "magazyn.xml";
+            XDocument doc = XDocument.Load(xmlFilePath);
+
+            if (kategoria == "Laptopy")
+            {
+                var laptopy = doc.Descendants("Produkt")
+                             .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Laptop")
+                            .Select(p => p.Element("Nazwa")?.Value) // Wyciągamy nazwę produktu
+                            .Where(nazwa => nazwa != null)
+                            .ToList();
+                return laptopy;
+            }
+            else if (kategoria == "Tablety")
+            {
+                var tablety = doc.Descendants("Produkt")
+                            .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Tablet")
+                            .Select(p => p.Element("Nazwa")?.Value) // Wyciągamy nazwę produktu
+                            .Where(nazwa => nazwa != null)
+                            .ToList();
+                return tablety;
+            }
+            else if(kategoria == "Smartfony")
+            {
+                var smartfony = doc.Descendants("Produkt")
+                            .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Smartfon")
+                            .Select(p => p.Element("Nazwa")?.Value) // Wyciągamy nazwę produktu
+                            .Where(nazwa => nazwa != null)
+                            .ToList();
+                return smartfony;
+            }
+            else
+            {
+                return new List<string>();
+            }
+ 
+            
         }
-        
+    
+
+
         // Obsługa przycisku powrotu
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
             // Powrót do menu sklepu
-            MenuSklepu menu = new MenuSklepu();
-            menu.Show();
+            Kategoria_produktu kategoria = new Kategoria_produktu();
+            kategoria.Show();
             this.Close();
         }
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
@@ -61,5 +102,7 @@ namespace gui
             }
             
         }
+
+     
     }
 }

@@ -7,32 +7,69 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="AliceBlue">
-        <!-- Napis powitalny -->
-        <TextBlock Text="Witamy w elektrosklepie!" FontSize="30" FontWeight="Bold" 
-                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,52,0,0" 
-                   Foreground="#333333"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
+            <RowDefinition Height="76"/>
+            <RowDefinition Height="117"/>
+            <RowDefinition Height="116"/>
+            <RowDefinition Height="67"/>
 
-        <!-- Ikony elektroniki po bokach -->
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <!-- Lewa ikona -->
-            <Image Source="\assets/phone_icon.png" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                   Width="105" Height="158" Margin="104,0,0,0"/>
-            <!-- Prawa ikona -->
-            <Image Source="\assets/laptop_icon.png" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                   Width="108" Height="167" Margin="633,0,0,0"/>
-        </Grid>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Border  Grid.Row ="1" Grid.Column="1" CornerRadius="10" BorderThickness="5">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Rectangle Grid.Row="1" Grid.Column="1">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#ec2075" Offset="0.0"/>
+                        <GradientStop Color="#f33944" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+        <Label x:Name="LblNazwaSklepu" Grid.Column="1" Grid.Row="1" Content="Witamy w Elektrosklepie!" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Brush Script MT" Height="100" VerticalAlignment="Center"/>
+        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,61,67,12" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnZarejestruj" Content="Zarejestruj się" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,9,67,64" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,0">
+                    <GradientStop Color="#f33944" Offset="0.0"/>
+                    <GradientStop Color="#ec2075" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,74,67,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image Grid.Column="2" Grid.Row="3" Source="/assets\laptop_icon.png"  Margin="22,13,20,63" Grid.RowSpan="2"/>
+        <Image Grid.Column="1" Grid.Row="2" Source="/assets\smartphone.png"  Height="110" VerticalAlignment="Center" Margin="399,0,-1,0" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="0" Grid.Row="3" Margin="-22,13,378,4" Grid.ColumnSpan="2" Source="/assets\tablet.png"/>
 
-        <!-- Panel z przyciskami -->
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Name="btnZaloguj" Content="Zaloguj się" Width="200" Height="40" Click="btnZaloguj_Click" 
-                    Background="#4CAF50" Foreground="White" FontSize="16" BorderBrush="#388E3C" BorderThickness="2"
-                    Cursor="Hand" Margin="0,0,0,20"/>
-            <Button Name="btnZarejestruj" Content="Zarejestruj się" Width="200" Height="40" Click="btnZarejestruj_Click" 
-                    Background="#2196F3" Foreground="White" FontSize="16" BorderBrush="#1976D2" BorderThickness="2"
-                    Cursor="Hand" Margin="0,0,0,20"/>
-            <Button Name="btnGosc" Content="Kontynuuj jako gość" Width="200" Height="40" Click="btnGosc_Click" 
-                    Background="#FFC107" Foreground="Black" FontSize="16" BorderBrush="#FF9800" BorderThickness="2"
-                    Cursor="Hand"/>
-        </StackPanel>
+        <Image Grid.Row="2" Source="/assets\store.png" Margin="-10,10,390,9" Grid.ColumnSpan="2"/>
+
+
+
+
     </Grid>
+
 </Window>
