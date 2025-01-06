@@ -45,6 +45,7 @@ namespace gui
             MessageBox.Show($"Dodano '{nazwaProduktu}' do koszyka!", "Koszyk", MessageBoxButton.OK, MessageBoxImage.Information);
             Koszyk_produktów k = new(_koszyk);
             k.Show();
+            this.Close();
         }
     }
 }

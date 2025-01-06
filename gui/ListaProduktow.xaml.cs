@@ -22,8 +22,8 @@ namespace gui
     public partial class ListaProduktow : Window
     {
         private Koszyk _koszyk;
-        private int wybrany_index;
-        List<string> _produkty = new();
+      
+        
         public ListaProduktow(string kategoria, Koszyk koszyk)
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace gui
 
             // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
-            _produkty = produkty;
             listBoxProdukty.ItemsSource = produkty;
             listBoxProdukty.DisplayMemberPath = "Nazwa";
         }
@@ -85,7 +84,8 @@ namespace gui
         {
             if (listBoxProdukty.SelectedItem == null)
                 return;
-            wybrany_index = listBoxProdukty.SelectedIndex;
+            
+            Produkt pr = listBoxProdukty.SelectedItem as Produkt;
             string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
@@ -93,7 +93,7 @@ namespace gui
             var produkt = doc.Descendants("Produkt")
                              .FirstOrDefault(p => p.Element("Nazwa")?.Value == wybranyProdukt);
 
-            Produkt p = (Produkt)listBoxProdukty.SelectedItem;
+           
             if (produkt != null)
             {
                 string nazwa = produkt.Element("Nazwa")?.Value;
@@ -126,8 +126,9 @@ namespace gui
                 }
                 
                 // Otwórz nowe okno z pełną specyfikacją
-                Specyfikacja specyfikacja = new Specyfikacja(, nazwa, cena, opis, dodatkowePola, _koszyk);
+                Specyfikacja specyfikacja = new Specyfikacja(pr, nazwa, cena, opis, dodatkowePola, _koszyk);
                 specyfikacja.Show();
+                this.Close();
             }
         }
 
