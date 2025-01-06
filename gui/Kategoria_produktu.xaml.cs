@@ -37,7 +37,7 @@ namespace gui
         }
         private void ClkSmart(object sender, RoutedEventArgs e)
         {
-            ListaProduktow telefony = new("Telefony");
+            ListaProduktow telefony = new("Smartfony");
             telefony.Show();
             this.Hide();
         }
