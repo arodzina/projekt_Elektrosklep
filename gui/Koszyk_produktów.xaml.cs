@@ -22,9 +22,7 @@ namespace gui
     {
         private Koszyk _koszyk;
         public Koszyk_produktów(Koszyk koszyk)
-        {
-            
-            InitializeComponent();
+        {   InitializeComponent();
             _koszyk = koszyk;
             DataContext = _koszyk;
             OdswiezListe();
@@ -33,6 +31,8 @@ namespace gui
         {
             LstBKoszyk.ItemsSource = null;
             LstBKoszyk.ItemsSource = _koszyk.produkty;
+            TxtCenaPrzed.Text = $"{_koszyk.CalkowitaCenaPrzedRabatem():c}";
+            //TxtRabat.Text = $"{_koszyk.}";
         }
         private void ClkKupujdalej(object sender, RoutedEventArgs e)
         {
@@ -48,5 +48,6 @@ namespace gui
                 OdswiezListe();
             }
         }
+
     }
 }

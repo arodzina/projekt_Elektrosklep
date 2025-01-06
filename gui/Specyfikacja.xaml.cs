@@ -42,7 +42,7 @@ namespace gui
             
             string nazwaProduktu = lblNazwa.Text;
             _koszyk.DodajProdukt(_produkt);
-            MessageBox.Show($"Dodano '{nazwaProduktu}' do koszyka!", "Koszyk", MessageBoxButton.OK, MessageBoxImage.Information);
+            //MessageBox.Show($"Dodano '{nazwaProduktu}' do koszyka!", "Koszyk", MessageBoxButton.OK, MessageBoxImage.Information);
             Koszyk_produktów k = new(_koszyk);
             k.Show();
             this.Close();

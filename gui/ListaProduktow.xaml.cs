@@ -34,7 +34,7 @@ namespace gui
             // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
             listBoxProdukty.ItemsSource = produkty;
-            listBoxProdukty.DisplayMemberPath = "Nazwa";
+            
         }
 
         // Metoda zwracająca listę produktów na podstawie kategorii

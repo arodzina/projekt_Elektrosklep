@@ -19,13 +19,14 @@ namespace gui
     {
         public Magazyn magazyn = new Magazyn();
         public Koszyk Koszyk { get; private set; }
+        
         public MainWindow()
         {
-            Koszyk = new();
-            magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
-            
-            
             InitializeComponent();
+            Koszyk = new();
+            Koszyk.produkty = new();
+            magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
+           
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
         {
