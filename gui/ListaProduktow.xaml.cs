@@ -36,15 +36,7 @@ namespace gui
         // Metoda zwracająca listę produktów na podstawie kategorii
         private List<string> PobierzProdukty(string kategoria)
         {
-            //string sciezkaPliku = "magazyn.xml"; // Ścieżka do pliku XML
-            //Magazyn? magazyn = Magazyn.OdczytXml(sciezkaPliku);
 
-            /*if (magazyn == null)
-            {
-                MessageBox.Show("Nie udało się wczytać danych z pliku XML.");
-                return new List<string>();
-            }
-            */
 
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
@@ -90,28 +82,44 @@ namespace gui
                 return;
 
             string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
-
-            // Wczytaj dokument XML
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
 
-            // Znajdź produkt o podanej nazwie
             var produkt = doc.Descendants("Produkt")
                              .FirstOrDefault(p => p.Element("Nazwa")?.Value == wybranyProdukt);
 
             if (produkt != null)
             {
-                // Pobierz szczegóły produktu
                 string nazwa = produkt.Element("Nazwa")?.Value;
                 string cena = produkt.Element("Cena")?.Value;
                 string opis = produkt.Element("Opis")?.Value;
-                string procesor = produkt.Element("Procesor")?.Value;
-                string ram = produkt.Element("RAM")?.Value;
-                string dysk = produkt.Element("Dysk")?.Value;
-                string kartaGraficzna = produkt.Element("KartaGraficzna")?.Value;
+                string typ = produkt.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value;
 
+                // Dodatkowe pola w zależności od typu produktu
+                Dictionary<string, string> dodatkowePola = new();
+
+                if (typ == "Laptop")
+                {
+                    dodatkowePola["Procesor"] = produkt.Element("Procesor")?.Value;
+                    dodatkowePola["RAM"] = $"{produkt.Element("RAM")?.Value} GB";
+                    dodatkowePola["Dysk"] = $"{produkt.Element("Dysk")?.Value} GB";
+                    dodatkowePola["Karta Graficzna"] = produkt.Element("KartaGraficzna")?.Value;
+                }
+                else if (typ == "Smartfon")
+                {
+                    dodatkowePola["Przekątna Ekranu"] = $"{produkt.Element("PrzekatnaEkranu")?.Value} cala";
+                    dodatkowePola["Aparat"] = produkt.Element("Aparat")?.Value;
+                    dodatkowePola["Pojemność Baterii"] = $"{produkt.Element("PojemnoscBaterii")?.Value} mAh";
+                    dodatkowePola["Procesor"] = produkt.Element("Procesor")?.Value;
+                }
+                else if (typ == "Tablet")
+                {
+                    dodatkowePola["Wyświetlacz"] = $"{produkt.Element("Wyswietlacz")?.Value} cala";
+                    dodatkowePola["System Operacyjny"] = produkt.Element("SystemOperacyjny")?.Value;
+                    dodatkowePola["Czy Rysik"] = produkt.Element("CzyRysik")?.Value == "true" ? "Tak" : "Nie";
+                }
                 // Otwórz nowe okno z pełną specyfikacją
-                Produkt specyfikacja = new Produkt(nazwa, cena, opis, procesor, ram, dysk, kartaGraficzna);
+                Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola);
                 specyfikacja.Show();
             }
         }
