@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elektrosklep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,25 +20,27 @@ namespace gui
     /// </summary>
     public partial class Kategoria_produktu : Window
     {
-        public Kategoria_produktu()
+        private Koszyk _koszyk;
+        public Kategoria_produktu(Koszyk koszyk)
         {
+            _koszyk= koszyk;
             InitializeComponent();
         }
         private void ClkLaptop(object sender, RoutedEventArgs e)
         {
-            ListaProduktow laptopy = new("Laptopy");
+            ListaProduktow laptopy = new("Laptopy", _koszyk);
             laptopy.Show();
             this.Hide();
         }
         private void ClkTablet(object sender, RoutedEventArgs e)
         {
-            ListaProduktow tablety = new("Tablety");
+            ListaProduktow tablety = new("Tablety", _koszyk);
             tablety.Show();
             this.Hide();
         }
         private void ClkSmart(object sender, RoutedEventArgs e)
         {
-            ListaProduktow telefony = new("Smartfony");
+            ListaProduktow telefony = new("Smartfony", _koszyk);
             telefony.Show();
             this.Hide();
         }

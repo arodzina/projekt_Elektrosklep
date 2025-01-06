@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elektrosklep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace gui
     /// </summary>
     public partial class OknoRejestracji : Window
     {
-        public OknoRejestracji()
+        private Koszyk _koszyk;
+        public OknoRejestracji(Koszyk koszyk)
         {
             InitializeComponent();
+            _koszyk = koszyk;
         }
         // Obsługa kliknięcia przycisku rejestracji
         private void btnZarejestruj_Click(object sender, RoutedEventArgs e)
@@ -53,7 +56,7 @@ namespace gui
 
                 // Możesz zamknąć okno rejestracji i przejść do okna logowania lub głównego menu
                 this.Close();
-                Kategoria_produktu menu = new Kategoria_produktu();
+                Kategoria_produktu menu = new Kategoria_produktu(_koszyk);
                 menu.Show();
                 
             }

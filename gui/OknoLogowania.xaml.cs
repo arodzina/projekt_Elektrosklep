@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elektrosklep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,10 @@ namespace gui
     /// </summary>
     public partial class OknoLogowania : Window
     {
-        public OknoLogowania()
+        private Koszyk _koszyk;
+        public OknoLogowania(Koszyk koszyk)
         {
+            _koszyk = koszyk;
             InitializeComponent();
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
@@ -31,7 +34,7 @@ namespace gui
            
             if (email == "test@test.com" && haslo == "password123")
             {
-                Kategoria_produktu kategoria = new Kategoria_produktu();
+                Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
                 kategoria.Show();
                 this.Hide();
             }

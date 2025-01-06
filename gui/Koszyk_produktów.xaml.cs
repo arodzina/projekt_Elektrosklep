@@ -37,12 +37,12 @@ namespace gui
         private void ClkKupujdalej(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Kategoria_produktu kategoria_Produktu = new();
+            Kategoria_produktu kategoria_Produktu = new(_koszyk);
             kategoria_Produktu.Show();
         }
         private void ClkUsun(object sender, RoutedEventArgs e)
         {
-            if (LstBKoszyk.SelectedItem is Elektrosklep.Produkt wybranyProdukt)
+            if (LstBKoszyk.SelectedItem is Produkt wybranyProdukt)
             {
                 _koszyk.UsunProdukt(wybranyProdukt);
                 OdswiezListe();

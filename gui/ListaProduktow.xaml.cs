@@ -21,16 +21,21 @@ namespace gui
     /// </summary>
     public partial class ListaProduktow : Window
     {
-        public ListaProduktow(string kategoria)
+        private Koszyk _koszyk;
+        private int wybrany_index;
+        List<string> _produkty = new();
+        public ListaProduktow(string kategoria, Koszyk koszyk)
         {
             InitializeComponent();
-           
+           _koszyk = koszyk;
             // Ustawienie nagłówka z nazwą kategorii
             lblKategoria.Content = $"Produkty z kategorii: {kategoria}";
 
             // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
+            _produkty = produkty;
             listBoxProdukty.ItemsSource = produkty;
+            listBoxProdukty.DisplayMemberPath = "Nazwa";
         }
 
         // Metoda zwracająca listę produktów na podstawie kategorii
@@ -80,7 +85,7 @@ namespace gui
         {
             if (listBoxProdukty.SelectedItem == null)
                 return;
-
+            wybrany_index = listBoxProdukty.SelectedIndex;
             string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
@@ -88,6 +93,7 @@ namespace gui
             var produkt = doc.Descendants("Produkt")
                              .FirstOrDefault(p => p.Element("Nazwa")?.Value == wybranyProdukt);
 
+            Produkt p = (Produkt)listBoxProdukty.SelectedItem;
             if (produkt != null)
             {
                 string nazwa = produkt.Element("Nazwa")?.Value;
@@ -118,8 +124,9 @@ namespace gui
                     dodatkowePola["System Operacyjny"] = produkt.Element("SystemOperacyjny")?.Value;
                     dodatkowePola["Czy Rysik"] = produkt.Element("CzyRysik")?.Value == "true" ? "Tak" : "Nie";
                 }
+                
                 // Otwórz nowe okno z pełną specyfikacją
-                Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola);
+                Specyfikacja specyfikacja = new Specyfikacja(, nazwa, cena, opis, dodatkowePola, _koszyk);
                 specyfikacja.Show();
             }
         }
@@ -128,7 +135,7 @@ namespace gui
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
             // Powrót do menu sklepu
-            Kategoria_produktu kategoria = new Kategoria_produktu();
+            Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
             kategoria.Show();
             this.Close();
         }

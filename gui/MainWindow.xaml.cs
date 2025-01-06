@@ -29,21 +29,21 @@ namespace gui
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
         {
-            OknoLogowania logowanie = new OknoLogowania();
+            OknoLogowania logowanie = new OknoLogowania(Koszyk);
             logowanie.Show();
             this.Hide();
         }
 
         private void btnZarejestruj_Click(object sender, RoutedEventArgs e)
         {
-            OknoRejestracji rejestracja = new OknoRejestracji();
+            OknoRejestracji rejestracja = new OknoRejestracji(Koszyk);
             rejestracja.Show();
             this.Hide();
         }
 
         private void btnGosc_Click(object sender, RoutedEventArgs e)
         {
-            Kategoria_produktu menu = new Kategoria_produktu();
+            Kategoria_produktu menu = new Kategoria_produktu(Koszyk);
             menu.Show();
             this.Hide();
         }
