@@ -128,7 +128,7 @@ namespace gui
                 // nowe okno z pełną specyfikacją
                 Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola,wybrany,_koszyk);
                 specyfikacja.Show();
-                this.Close();
+                
             }
         }
 

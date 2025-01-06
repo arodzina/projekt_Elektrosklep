@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Specyfikacja Produktu" Height="550" Width="500">
     <Grid Background="White">
+        
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
                 <TextBlock Text="Specyfikacja Produktu" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
@@ -13,10 +14,25 @@
                 <TextBlock Text="Opis:" FontWeight="Bold" />
                 <TextBlock x:Name="lblOpis" Margin="0,0,0,10" />
                 <StackPanel x:Name="stackDodatkowePola" Margin="0,20,0,0"></StackPanel>
-                
-                <Button x:Name="BtnZarejestruj" Content="Dodaj do koszyka" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,9,67,64" FontSize="20" FontFamily="Rockwell Nova" Click="btnDodajDoKoszyka_Click">
+                <Button x:Name="BtnDodaj" Content="Dodaj do koszyka" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnDodajDoKoszyka_Click" Width="324">
                     <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,0">
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#f33944" Offset="0.0"/>
+                            <GradientStop Color="#ec2075" Offset="0.5"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="BtnPowrót" Content="Powrót" Width="324" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,9,67,64" FontSize="20" FontFamily="Rockwell Nova" Click="btnPowrót_Click" RenderTransformOrigin="0.506,2.041">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#f33944" Offset="0.0"/>
+                            <GradientStop Color="#ec2075" Offset="0.5"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="BtnKoszyk" Content="Przejdź do koszyka" Width="324" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnKoszyk_Click" RenderTransformOrigin="0.506,2.041">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                             <GradientStop Color="#f33944" Offset="0.0"/>
                             <GradientStop Color="#ec2075" Offset="0.5"/>
                         </LinearGradientBrush>
