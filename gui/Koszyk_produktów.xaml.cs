@@ -49,6 +49,5 @@ namespace gui
             _koszyk.produkty.RemoveAt(LstBKoszyk.SelectedIndex);
             OdswiezListe();
         }
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,12 @@ namespace Elektrosklep
 {
     public class Koszyk
     {
-        public List<Produkt> produkty;
+        public ObservableCollection<Produkt> produkty { get; set; } = new ObservableCollection<Produkt>();
         private bool rabatZastosowany; // Pole do sprawdzania, czy rabat został zastosowany
 
         public Koszyk()
         {
-            produkty = new List<Produkt>();
+            produkty = new ObservableCollection<Produkt>();
             rabatZastosowany = false; // Początkowo rabat nie jest zastosowany
         }
 

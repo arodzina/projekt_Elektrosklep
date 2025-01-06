@@ -131,7 +131,6 @@ namespace gui
                 
             }
         }
-
         // Obsługa przycisku powrotu
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {

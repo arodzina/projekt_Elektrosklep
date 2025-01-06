@@ -30,19 +30,19 @@ namespace gui
         {
             ListaProduktow laptopy = new("Laptopy", _koszyk);
             laptopy.Show();
-            this.Hide();
+            this.Close();
         }
         private void ClkTablet(object sender, RoutedEventArgs e)
         {
             ListaProduktow tablety = new("Tablety", _koszyk);
             tablety.Show();
-            this.Hide();
+            this.Close();
         }
         private void ClkSmart(object sender, RoutedEventArgs e)
         {
             ListaProduktow telefony = new("Smartfony", _koszyk);
             telefony.Show();
-            this.Hide();
+            this.Close();
         }
 
     }

@@ -4,7 +4,7 @@
         Title="Specyfikacja Produktu" Height="550" Width="500">
     <Grid Background="White">
         
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" RenderTransformOrigin="0.506,0.538" HorizontalAlignment="Right" Width="500">
             <StackPanel Margin="20">
                 <TextBlock Text="Specyfikacja Produktu" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
                 <TextBlock Text="Nazwa:" FontWeight="Bold" />
