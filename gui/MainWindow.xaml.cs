@@ -17,10 +17,12 @@ namespace gui
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Magazyn magazyn = new Magazyn();
+        public Koszyk koszyk = new();
         public MainWindow()
         {
-            Magazyn? magazyn = Magazyn.OdczytXml("magazyn.xml");
-            Koszyk koszyk = new();
+            magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
+            
             InitializeComponent();
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)

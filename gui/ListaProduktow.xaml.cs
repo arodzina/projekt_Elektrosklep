@@ -55,9 +55,9 @@ namespace gui
         }
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
-            foreach(ListBoxItem item in listBoxProdukty.SelectedItems)
+            foreach(Produkt item in listBoxProdukty.SelectedItems)
             {
-                //koszyk.DodajProdukt(item); coś trzeba zrobić żeby się dodawało do koszyka
+                //koszyk.DodajProdukt(item);
             }
             
         }
