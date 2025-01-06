@@ -53,7 +53,7 @@ namespace gui
             {
                 var laptopy = doc.Descendants("Produkt")
                              .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Laptop")
-                            .Select(p => p.Element("Nazwa")?.Value) // Wyciągamy nazwę produktu
+                            .Select(p => p.Element("Nazwa")?.Value) 
                             .Where(nazwa => nazwa != null)
                             .ToList();
                 return laptopy;
@@ -62,7 +62,7 @@ namespace gui
             {
                 var tablety = doc.Descendants("Produkt")
                             .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Tablet")
-                            .Select(p => p.Element("Nazwa")?.Value) // Wyciągamy nazwę produktu
+                            .Select(p => p.Element("Nazwa")?.Value) 
                             .Where(nazwa => nazwa != null)
                             .ToList();
                 return tablety;
@@ -71,7 +71,7 @@ namespace gui
             {
                 var smartfony = doc.Descendants("Produkt")
                             .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Smartfon")
-                            .Select(p => p.Element("Nazwa")?.Value) // Wyciągamy nazwę produktu
+                            .Select(p => p.Element("Nazwa")?.Value)
                             .Where(nazwa => nazwa != null)
                             .ToList();
                 return smartfony;
@@ -83,8 +83,38 @@ namespace gui
  
             
         }
-    
 
+        private void listBoxProdukty_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (listBoxProdukty.SelectedItem == null)
+                return;
+
+            string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
+
+            // Wczytaj dokument XML
+            string xmlFilePath = "magazyn.xml";
+            XDocument doc = XDocument.Load(xmlFilePath);
+
+            // Znajdź produkt o podanej nazwie
+            var produkt = doc.Descendants("Produkt")
+                             .FirstOrDefault(p => p.Element("Nazwa")?.Value == wybranyProdukt);
+
+            if (produkt != null)
+            {
+                // Pobierz szczegóły produktu
+                string nazwa = produkt.Element("Nazwa")?.Value;
+                string cena = produkt.Element("Cena")?.Value;
+                string opis = produkt.Element("Opis")?.Value;
+                string procesor = produkt.Element("Procesor")?.Value;
+                string ram = produkt.Element("RAM")?.Value;
+                string dysk = produkt.Element("Dysk")?.Value;
+                string kartaGraficzna = produkt.Element("KartaGraficzna")?.Value;
+
+                // Otwórz nowe okno z pełną specyfikacją
+                Produkt specyfikacja = new Produkt(nazwa, cena, opis, procesor, ram, dysk, kartaGraficzna);
+                specyfikacja.Show();
+            }
+        }
 
         // Obsługa przycisku powrotu
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
@@ -94,14 +124,7 @@ namespace gui
             kategoria.Show();
             this.Close();
         }
-        private void btnDodaj_Click(object sender, RoutedEventArgs e)
-        {
-            foreach(Produkt item in listBoxProdukty.SelectedItems)
-            {
-                //koszyk.DodajProdukt(item);
-            }
-            
-        }
+
 
      
     }

@@ -12,16 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using System.Windows;
+
 namespace gui
 {
-    /// <summary>
-    /// Logika interakcji dla klasy Produkt.xaml
-    /// </summary>
     public partial class Produkt : Window
     {
-        public Produkt()
+        public Produkt(string nazwa, string cena, string opis, string procesor, string ram, string dysk, string kartaGraficzna)
         {
             InitializeComponent();
+            lblNazwa.Text = nazwa;
+            lblCena.Text = $"{cena} PLN";
+            lblOpis.Text = opis;
+            lblProcesor.Text = procesor;
+            lblRAM.Text = $"{ram} GB";
+            lblDysk.Text = $"{dysk} GB";
+            lblKartaGraficzna.Text = kartaGraficzna;
         }
     }
 }
