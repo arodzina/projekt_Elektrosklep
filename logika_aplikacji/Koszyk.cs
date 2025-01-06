@@ -22,6 +22,13 @@ namespace Elektrosklep
         {
             produkty.Add(produkt);
         }
+        public void UsunProdukt(Produkt produkt)
+        {
+            if (produkty.Contains(produkt))
+            {
+                produkty.Remove(produkt);
+            }
+        }
 
         // Zastosowanie rabatu, jeśli w koszyku są produkty z każdej kategorii
         public void ZastosujRabat()

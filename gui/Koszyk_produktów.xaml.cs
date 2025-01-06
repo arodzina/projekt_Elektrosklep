@@ -26,12 +26,27 @@ namespace gui
             
             InitializeComponent();
             _koszyk = koszyk;
+            DataContext = _koszyk;
             OdswiezListe();
         }
         private void OdswiezListe()
         {
             LstBKoszyk.ItemsSource = null;
             LstBKoszyk.ItemsSource = _koszyk.produkty;
+        }
+        private void ClkKupujdalej(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Kategoria_produktu kategoria_Produktu = new();
+            kategoria_Produktu.Show();
+        }
+        private void ClkUsun(object sender, RoutedEventArgs e)
+        {
+            if (LstBKoszyk.SelectedItem is Elektrosklep.Produkt wybranyProdukt)
+            {
+                _koszyk.UsunProdukt(wybranyProdukt);
+                OdswiezListe();
+            }
         }
     }
 }
