@@ -31,8 +31,10 @@ namespace gui
         {
             LstBKoszyk.ItemsSource = null;
             LstBKoszyk.ItemsSource = _koszyk.produkty;
+            _koszyk.ZastosujRabat();
             TxtCenaPrzed.Text = $"{_koszyk.CalkowitaCenaPrzedRabatem():c}";
-            //TxtRabat.Text = $"{_koszyk.}";
+            TxtRabat.Text = $"{_koszyk.ObliczWartoscRabatu():c}";
+            TxtCenaPo.Text= $"{_koszyk.ObliczCalkowitaCene():c}";
         }
         private void ClkKupujdalej(object sender, RoutedEventArgs e)
         {
