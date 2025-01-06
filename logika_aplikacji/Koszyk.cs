@@ -8,7 +8,7 @@ namespace Elektrosklep
 {
     public class Koszyk
     {
-        private List<Produkt> produkty;
+        public List<Produkt> produkty;
         private bool rabatZastosowany; // Pole do sprawdzania, czy rabat został zastosowany
 
         public Koszyk()

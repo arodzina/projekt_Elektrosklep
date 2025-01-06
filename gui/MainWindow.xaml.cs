@@ -23,6 +23,7 @@ namespace gui
         {
             magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
             
+            
             InitializeComponent();
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)

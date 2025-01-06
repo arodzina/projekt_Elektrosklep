@@ -1,5 +1,4 @@
-﻿using Elektrosklep;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +15,13 @@ using System.Windows.Shapes;
 namespace gui
 {
     /// <summary>
-    /// Logika interakcji dla klasy Koszyk.xaml
+    /// Logika interakcji dla klasy Koszyk_produktów.xaml
     /// </summary>
-    public partial class Koszyk : Window
+    public partial class Koszyk_produktów : Window
     {
-        public Koszyk()
+        public Koszyk_produktów()
         {
             InitializeComponent();
-            
         }
     }
 }

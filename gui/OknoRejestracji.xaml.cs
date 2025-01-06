@@ -53,6 +53,9 @@ namespace gui
 
                 // Możesz zamknąć okno rejestracji i przejść do okna logowania lub głównego menu
                 this.Close();
+                Kategoria_produktu menu = new Kategoria_produktu();
+                menu.Show();
+                
             }
         }
     }
