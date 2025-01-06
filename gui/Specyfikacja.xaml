@@ -13,8 +13,15 @@
                 <TextBlock Text="Opis:" FontWeight="Bold" />
                 <TextBlock x:Name="lblOpis" Margin="0,0,0,10" />
                 <StackPanel x:Name="stackDodatkowePola" Margin="0,20,0,0"></StackPanel>
-                <Button Content="Dodaj do koszyka" HorizontalAlignment="Center" Margin="0,20,0,0" 
-                        Width="150" Height="40" Click="btnDodajDoKoszyka_Click" />
+                
+                <Button x:Name="BtnZarejestruj" Content="Dodaj do koszyka" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,9,67,64" FontSize="20" FontFamily="Rockwell Nova" Click="btnDodajDoKoszyka_Click">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,0">
+                            <GradientStop Color="#f33944" Offset="0.0"/>
+                            <GradientStop Color="#ec2075" Offset="0.5"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
             </StackPanel>
         </ScrollViewer>
     </Grid>

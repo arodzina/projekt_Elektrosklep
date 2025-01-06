@@ -11,17 +11,22 @@
   <ItemGroup>
     <None Remove="assets\ikonka_laptop.jpg" />
     <None Remove="assets\ikonka_smartfon.jpeg" />
+    <None Remove="assets\ikonka_smartfon.png" />
     <None Remove="assets\ipad.png" />
     <None Remove="assets\laptop2.png" />
     <None Remove="assets\laptop_icon.png" />
     <None Remove="assets\login.png" />
     <None Remove="assets\phone_icon.png" />
     <None Remove="assets\smartphone.png" />
+    <None Remove="assets\store.png" />
     <None Remove="assets\tablet.png" />
     <None Remove="assets\tablet2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="assets\ikonka_smartfon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="assets\phone_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -33,9 +38,6 @@
 
   <ItemGroup>
     <Resource Include="assets\ikonka_laptop.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="assets\ikonka_smartfon.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="assets\ipad.png">
@@ -51,6 +53,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="assets\smartphone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\store.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="assets\tablet.png">

@@ -6,22 +6,25 @@
         xmlns:local="clr-namespace:gui" xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="211"/>
+            <RowDefinition Height="83"/>
+            <RowDefinition Height="198"/>
             <RowDefinition Height="89"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70"/>
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="94"/>
+            <ColumnDefinition Width="151"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="84"/>
+            <ColumnDefinition Width="151"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="149"/>
+            <ColumnDefinition Width="96"/>
         </Grid.ColumnDefinitions>
-        <Border  Grid.Row ="1" Grid.Column="2" CornerRadius="10" BorderThickness="5" Margin="25,0,25,0">
+        <Border  Grid.Row ="1" Grid.Column="3" CornerRadius="10" BorderThickness="5" Grid.ColumnSpan="3">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -37,8 +40,8 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Border>
-        <Label x:Name="LblNazwaSklepu" Grid.Column="2" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="60" FontFamily="Brush Script MT"/>
-        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="21,31,393,28" FontSize="14" FontFamily="Rockwell Nova" Click="ClkLaptop">
+        <Label x:Name="LblNazwaSklepu" Grid.Column="3" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="58" FontFamily="Brush Script MT" Grid.ColumnSpan="3" Margin="10,0,10,0"/>
+        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="21,25,21,34" FontSize="16" FontFamily="Rockwell Nova" Click="ClkLaptop">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -46,7 +49,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="206,31,206,28" Click="ClkTablet">
+        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="4" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="16" FontFamily="Rockwell Nova" Margin="21,25,21,34" Click="ClkTablet">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -54,7 +57,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="2" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Margin="386,31,20,28" Click="ClkSmart">
+        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="6" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="16" FontFamily="Rockwell Nova" Margin="0,25,0,34" Click="ClkSmart" HorizontalAlignment="Center" Width="106">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -62,9 +65,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Image Grid.Column="1" Grid.Row="2" Source="assets\laptop2.png" RenderTransformOrigin="-0.392,0.415" Margin="74,72,366,0" Grid.ColumnSpan="2"/>
-        <Image Grid.Column="2" Grid.Row="2" Source="assets\ipad.png" RenderTransformOrigin="-0.392,0.415" Margin="193,84,193,0" Height="114" VerticalAlignment="Top"/>
-        <Image Grid.Column="2" Grid.Row="2" Source="assets\ikonka_smartfon.jpeg" Margin="357,54,71,72" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Image Grid.Row="2" Source="\assets\laptop2.png" RenderTransformOrigin="-0.392,0.415" Margin="85,27,29,21" Grid.ColumnSpan="2"/>
+        <Image Grid.Column="4" Grid.Row="2" Source="\assets\ipad.png" RenderTransformOrigin="-0.392,0.415" Margin="5,45,14,0" Height="153" VerticalAlignment="Top"/>
+        <Image Grid.Column="6" Grid.Row="1" Source="\assets\ikonka_smartfon.png" Margin="0,81,0,87" HorizontalAlignment="Center" Width="108" Grid.RowSpan="3"/>
         <DockPanel Grid.Column="0" Grid.Row="0">
             <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
                 <MenuItem Header="Admin" Width="55">
