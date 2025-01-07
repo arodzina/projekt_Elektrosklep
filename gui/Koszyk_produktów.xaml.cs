@@ -43,6 +43,7 @@ namespace gui
             Kategoria_produktu kategoria_Produktu = new(_koszyk);
             kategoria_Produktu.Show();
         }
+
         private void ClkUsun(object sender, RoutedEventArgs e)
         {
             if (LstBKoszyk.SelectedItem == null)
@@ -50,22 +51,32 @@ namespace gui
                 MessageBox.Show("Nie wybrano żadnego produktu.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            Produkt p = LstBKoszyk.SelectedItem as Produkt;
-            _koszyk.UsunProdukt(p);
+            List<Produkt> lista = new List<Produkt>();
+            foreach(Produkt item in LstBKoszyk.SelectedItems)
+            {
+                lista.Add(item);
+            }
+            foreach(Produkt p in lista)
+            {
+                _koszyk.UsunProdukt(p);
+            }
+            //Produkt p = LstBKoszyk.SelectedItem as Produkt;
+            //_koszyk.UsunProdukt(p);
             OdswiezListe();
         }
         private void btnZwiekszLiczbe_Click(object sender, RoutedEventArgs e)
-{
-    Produkt p = LstBKoszyk.SelectedItem as Produkt;
-    if(LstBKoszyk.SelectedItem == null)
-    {
-        MessageBox.Show("Nie wybrano żadnego produktu", "Błąd!",  MessageBoxButton.OK, MessageBoxImage.Warning);
-        return;
-    }
-    Produkt p2 = (Produkt)p.Clone();
-    _koszyk.DodajProdukt(p2);
-    OdswiezListe();
-}
+        {
+            Produkt p = LstBKoszyk.SelectedItem as Produkt;
+            if(LstBKoszyk.SelectedItem == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego produktu", "Błąd!",  MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+
+            }
+            Produkt p2 = (Produkt)p.Clone();
+            _koszyk.DodajProdukt(p2);
+            OdswiezListe();
+        }
 
 
     }
