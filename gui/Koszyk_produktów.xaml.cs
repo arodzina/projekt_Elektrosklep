@@ -60,8 +60,7 @@ namespace gui
             {
                 _koszyk.UsunProdukt(p);
             }
-            //Produkt p = LstBKoszyk.SelectedItem as Produkt;
-            //_koszyk.UsunProdukt(p);
+        
             OdswiezListe();
         }
         private void btnZwiekszLiczbe_Click(object sender, RoutedEventArgs e)

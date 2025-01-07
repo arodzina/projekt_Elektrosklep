@@ -21,26 +21,57 @@ namespace gui
     public partial class OknoLogowania : Window
     {
         private Koszyk _koszyk;
-        public OknoLogowania(Koszyk koszyk)
+        string osoba;
+        public OknoLogowania(Koszyk koszyk, string kto)
         {
-            _koszyk = koszyk;
+          
             InitializeComponent();
+            osoba = kto;
+            _koszyk = koszyk;
+            if(osoba=="user")
+            {
+                LblLogin.Content = "Wpisz swój e-mail:";
+                LblHasło.Content = "Wpisz swoje hasło:";
+            }
+            else
+            {
+                LblLogin.Content = "Wpisz login administratora:";
+                LblHasło.Content = "Wpisz hasło:";
+            }
         }
+
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
         {
             string email = txtEmail.Text;
             string haslo = txtHaslo.Password;
 
-           
-            if (email == "test@test.com" && haslo == "password123")
+            if (osoba == "user")
             {
-                Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
-                kategoria.Show();
-                this.Hide();
+                
+                if (email == "test@test.com" && haslo == "password123")
+                {
+                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
+                    kategoria.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Niepoprawne dane logowania.");
+                }
             }
             else
             {
-                MessageBox.Show("Niepoprawne dane logowania.");
+                
+                if (email == "admin1" && haslo == "admin123")
+                {
+                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
+                    kategoria.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Niepoprawne dane logowania.");
+                }
             }
         }
     }

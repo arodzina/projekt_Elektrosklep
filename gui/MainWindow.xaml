@@ -66,7 +66,16 @@
         <Image Grid.Column="0" Grid.Row="3" Margin="-22,13,378,4" Grid.ColumnSpan="2" Source="/assets\tablet.png"/>
 
         <Image Grid.Row="2" Source="/assets\store.png" Margin="-10,10,390,9" Grid.ColumnSpan="2"/>
-
+        <DockPanel Grid.Column="0" Grid.Row="0">
+            <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
+                <MenuItem Header="Admin" Width="55">
+                    <MenuItem Header="Zaloguj" Click="MenuItem_Zaloguj_Click"/>
+                    
+                    <MenuItem Header="Wyjdz"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
 
 
 

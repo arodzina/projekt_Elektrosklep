@@ -68,16 +68,7 @@
         <Image Grid.Row="2" Source="\assets\laptop2.png" RenderTransformOrigin="-0.392,0.415" Margin="85,27,29,21" Grid.ColumnSpan="2"/>
         <Image Grid.Column="4" Grid.Row="2" Source="\assets\ipad.png" RenderTransformOrigin="-0.392,0.415" Margin="5,45,14,0" Height="153" VerticalAlignment="Top"/>
         <Image Grid.Column="6" Grid.Row="1" Source="\assets\ikonka_smartfon.png" Margin="0,81,0,87" HorizontalAlignment="Center" Width="108" Grid.RowSpan="3"/>
-        <DockPanel Grid.Column="0" Grid.Row="0">
-            <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
-                <MenuItem Header="Admin" Width="55">
-                    <MenuItem Header="Zaloguj"/>
-                    <MenuItem Header="Zapisz"/>
-                    <MenuItem Header="Wyjdz"/>
-                </MenuItem>
-            </Menu>
-            <StackPanel></StackPanel>
-        </DockPanel>
+        
 
     </Grid>
 </Window>

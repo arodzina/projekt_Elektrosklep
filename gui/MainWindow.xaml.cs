@@ -30,7 +30,7 @@ namespace gui
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
         {
-            OknoLogowania logowanie = new OknoLogowania(Koszyk);
+            OknoLogowania logowanie = new OknoLogowania(Koszyk, "user");
             logowanie.Show();
             this.Hide();
         }
@@ -46,6 +46,12 @@ namespace gui
         {
             Kategoria_produktu menu = new Kategoria_produktu(Koszyk);
             menu.Show();
+            this.Hide();
+        }
+       private void MenuItem_Zaloguj_Click(object sender, RoutedEventArgs e)
+        {
+            OknoLogowania logowanie = new OknoLogowania(Koszyk, "admin");
+            logowanie.Show();
             this.Hide();
         }
     }
