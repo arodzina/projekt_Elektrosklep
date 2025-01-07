@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
-        Title="Koszyk" Height="450" Width="800">
+        Title="Koszyk" Height="450" Width="850">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -21,7 +21,7 @@
             <ColumnDefinition Width="110"/>
             <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
-        <Border  Grid.Row ="1" Grid.Column="1" Width="500" CornerRadius="10" BorderThickness="5" HorizontalAlignment="Left" Margin="110,0,0,0">
+        <Border  Grid.Row ="1" Grid.Column="1" Width="500" CornerRadius="10" BorderThickness="5" HorizontalAlignment="Center" Margin="110,0,0,0">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

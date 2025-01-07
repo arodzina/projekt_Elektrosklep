@@ -51,9 +51,10 @@ namespace gui
         }
         private void btnKoszyk_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            
             Koszyk_produktów k = new(_koszyk);
             k.Show();
+            this.Close();
         }
     }
 }
