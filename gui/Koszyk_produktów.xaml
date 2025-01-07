@@ -39,7 +39,9 @@
         </Border>
         <Label x:Name="LblKoszyk" Content="Koszyk" Grid.Column="1" Grid.Row="1" FontFamily="Rockwell Nova" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" Margin="110,0,10,0"/>
         <ListBox x:Name="LstBKoszyk" Grid.Row="3" Grid.Column="1" DisplayMemberPath="Nazwa" SelectionMode="Single" FontSize="15" FontFamily="Rockwell Nova"/>
-        <Button x:Name="BtnUsunK" Content="Usuń z koszyka" Click="ClkUsun" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Column="2" Grid.Row="3" Margin="0,29,0,0" Height="38" VerticalAlignment="Top">
+
+        <Button x:Name="BtnUsunK" Content="Usuń z koszyka" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Column="2" Grid.Row="3" Margin="0,29,0,0" Height="38" VerticalAlignment="Top" Click="ClkUsun">
+
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
