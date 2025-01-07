@@ -51,9 +51,21 @@ namespace gui
                 return;
             }
             Produkt p = LstBKoszyk.SelectedItem as Produkt;
-            _koszyk.produkty.RemoveAt(LstBKoszyk.SelectedIndex);
+            _koszyk.UsunProdukt(p);
             OdswiezListe();
         }
+        private void btnZwiekszLiczbe_Click(object sender, RoutedEventArgs e)
+{
+    Produkt p = LstBKoszyk.SelectedItem as Produkt;
+    if(LstBKoszyk.SelectedItem == null)
+    {
+        MessageBox.Show("Nie wybrano żadnego produktu", "Błąd!",  MessageBoxButton.OK, MessageBoxImage.Warning);
+        return;
+    }
+    Produkt p2 = (Produkt)p.Clone();
+    _koszyk.DodajProdukt(p2);
+    OdswiezListe();
+}
 
 
     }
