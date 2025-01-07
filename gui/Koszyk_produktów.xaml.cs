@@ -45,9 +45,17 @@ namespace gui
         }
         private void ClkUsun(object sender, RoutedEventArgs e)
         {
+            if (LstBKoszyk.SelectedItem == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego produktu.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             Produkt p = LstBKoszyk.SelectedItem as Produkt;
             _koszyk.produkty.RemoveAt(LstBKoszyk.SelectedIndex);
             OdswiezListe();
         }
+
+
     }
+    
 }
