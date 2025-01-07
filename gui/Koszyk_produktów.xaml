@@ -16,10 +16,10 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="110"/>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Border  Grid.Row ="1" Grid.Column="1" Width="500" CornerRadius="10" BorderThickness="5" HorizontalAlignment="Center" Margin="110,0,0,0">
             <Border.BorderBrush>
@@ -38,7 +38,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblKoszyk" Content="Koszyk" Grid.Column="1" Grid.Row="1" FontFamily="Rockwell Nova" Foreground="White" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" Margin="110,0,10,0"/>
-        <ListBox x:Name="LstBKoszyk" Grid.Row="3" Grid.Column="1" DisplayMemberPath="Nazwa" SelectionMode="Single"/>
+        <ListBox x:Name="LstBKoszyk" Grid.Row="3" Grid.Column="1" DisplayMemberPath="Nazwa" SelectionMode="Single" FontSize="15" FontFamily="Rockwell Nova"/>
         <Button x:Name="BtnUsunK" Content="Usuń z koszyka" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Column="2" Grid.Row="3" Margin="0,29,0,0" Height="38" VerticalAlignment="Top">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -47,7 +47,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnWrocK" Content="Kupuj dalej" Click="ClkKupujdalej" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Column="2" Grid.Row="3" Margin="0,100,0,0" Height="38" VerticalAlignment="Top" HorizontalAlignment="Center" Width="110">
+        <Button x:Name="BtnWrocK" Content="Kupuj dalej" Click="ClkKupujdalej" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Column="2" Grid.Row="3" Margin="0,100,0,0" Height="38" VerticalAlignment="Top" HorizontalAlignment="Center" Width="130">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -59,8 +59,8 @@
         <Label x:Name="LblCenaPrzed" Grid.Row="4" Grid.Column="1" Content="Cena przed rabatem:" Margin="360,5,5,70" FontSize="20" FontFamily="Rockwell Nova"/>
         <Label x:Name="LblRabat" Grid.Row="4" Grid.Column="1" Content="Udzielony rabat:" Margin="360,43,5,42" FontSize="20" FontFamily="Rockwell Nova"/>
         <Label x:Name="LblCenaPo" Grid.Row="4" Grid.Column="1" Content="Cena ostateczna:" Margin="360,78,10,7" FontSize="20" FontFamily="Rockwell Nova"/>
-        <TextBlock x:Name="TxtCenaPrzed" Grid.Row="3" Grid.Column="2" Height="35" Margin="0,174,0,0" VerticalAlignment="Top" Grid.RowSpan="2" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>
-        <TextBlock x:Name="TxtRabat" Grid.Row="4" Grid.Column="2" Height="35" VerticalAlignment="Center" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>
-        <TextBlock x:Name="TxtCenaPo" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="110" FontFamily="Rockwell Nova"/>
+        <TextBlock x:Name="TxtCenaPrzed" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="130" FontFamily="Rockwell Nova" FontSize="20"/>
+        <TextBlock x:Name="TxtRabat" Grid.Row="4" Grid.Column="2" Height="35" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="130" FontFamily="Rockwell Nova" FontSize="20" Margin="0,45,0,0"/>
+        <TextBlock x:Name="TxtCenaPo" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="130" FontFamily="Rockwell Nova" FontSize="20"/>
     </Grid>
 </Window>
