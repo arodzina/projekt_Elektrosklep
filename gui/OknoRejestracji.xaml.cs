@@ -56,7 +56,7 @@ namespace gui
 
                 // Możesz zamknąć okno rejestracji i przejść do okna logowania lub głównego menu
                 this.Close();
-                Kategoria_produktu menu = new Kategoria_produktu(_koszyk);
+                Kategoria_produktu menu = new Kategoria_produktu(_koszyk, "user");
                 menu.Show();
                 
             }

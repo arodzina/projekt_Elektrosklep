@@ -40,7 +40,7 @@ namespace gui
         private void ClkKupujdalej(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Kategoria_produktu kategoria_Produktu = new(_koszyk);
+            Kategoria_produktu kategoria_Produktu = new(_koszyk, "user");
             kategoria_Produktu.Show();
         }
 

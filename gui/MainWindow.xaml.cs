@@ -44,7 +44,7 @@ namespace gui
 
         private void btnGosc_Click(object sender, RoutedEventArgs e)
         {
-            Kategoria_produktu menu = new Kategoria_produktu(Koszyk);
+            Kategoria_produktu menu = new Kategoria_produktu(Koszyk, "user");
             menu.Show();
             this.Hide();
         }

@@ -17,28 +17,22 @@ using System.Xml.Linq;
 namespace gui
 {
     /// <summary>
-    /// Logika interakcji dla klasy ListaProduktow.xaml
+    /// Logika interakcji dla klasy Admin_ListaProduktów.xaml
     /// </summary>
-    public partial class ListaProduktow : Window
+    public partial class Admin_ListaProduktów : Window
     {
-        private Koszyk _koszyk;
         private List<string> p = new();
-       
-        
-        public ListaProduktow(string kategoria, Koszyk koszyk)
+        private Koszyk _koszyk;
+        public Admin_ListaProduktów(string kategoria)
         {
             InitializeComponent();
-            _koszyk = koszyk;
-            // Ustawienie nagłówka z nazwą kategorii
-            lblKategoria.Content = $"Produkty z kategorii: {kategoria}";
-
+            lblKat.Content = $"Produkty z kategorii: {kategoria}";
             // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
-            listBoxProdukty.ItemsSource = produkty;
+            lstBoxProdukty.ItemsSource = produkty;
             p = produkty;
-            //listBoxProdukty.DisplayMemberPath = "Nazwa";
-            
         }
+
 
         // Metoda zwracająca listę z nazwami produktów z odowiedniej kategorii
         private List<string> PobierzProdukty(string kategoria)
@@ -49,7 +43,7 @@ namespace gui
             {
                 var laptopy = doc.Descendants("Produkt")
                              .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Laptop")
-                            .Select(p => p.Element("Nazwa")?.Value) 
+                            .Select(p => p.Element("Nazwa")?.Value)
                             .Where(nazwa => nazwa != null)
                             .ToList();
                 return laptopy;
@@ -58,12 +52,12 @@ namespace gui
             {
                 var tablety = doc.Descendants("Produkt")
                             .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Tablet")
-                            .Select(p => p.Element("Nazwa")?.Value) 
+                            .Select(p => p.Element("Nazwa")?.Value)
                             .Where(nazwa => nazwa != null)
                             .ToList();
                 return tablety;
             }
-            else if(kategoria == "Smartfony")
+            else if (kategoria == "Smartfony")
             {
                 var smartfony = doc.Descendants("Produkt")
                             .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Smartfon")
@@ -78,12 +72,12 @@ namespace gui
             }
         }
 
-        private void listBoxProdukty_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void lstBoxProdukty_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (listBoxProdukty.SelectedItem == null)
+            if (lstBoxProdukty.SelectedItem == null)
                 return;
-            //Produkt pr = listBoxProdukty.SelectedItem as Produkt;
-            string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
+            
+            string wybranyProdukt = lstBoxProdukty.SelectedItem.ToString();
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
 
@@ -129,49 +123,49 @@ namespace gui
                     }
                 }
                 // nowe okno z pełną specyfikacją
-                Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola,wybrany,_koszyk);
-                specyfikacja.Show();
-                
+                //Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola, wybrany, _koszyk);
+                //specyfikacja.Show();
+
             }
         }
         // Obsługa przycisku powrotu
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
             // Powrót do menu sklepu
-            Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "user");
+            Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "admin");
             kategoria.Show();
             this.Close();
         }
         public void SortujPoNazwie(List<string> lista)
         {
-            lista.Sort((x,y)=>(x.CompareTo(y)));
+            lista.Sort((x, y) => (x.CompareTo(y)));
         }
-        private void btnSortujNazwa_Click(object sender, RoutedEventArgs e) 
+        private void btnSortujNazwa_Click(object sender, RoutedEventArgs e)
         {
             SortujPoNazwie(p);
-            listBoxProdukty.ItemsSource = null; 
-            listBoxProdukty.ItemsSource = p;
+            lstBoxProdukty.ItemsSource = null;
+            lstBoxProdukty.ItemsSource = p;
         }
         private void btnSortujCena_Click(object sender, RoutedEventArgs e)
         {
             SortujPoCenie(p);
-            listBoxProdukty.ItemsSource = null;
-            listBoxProdukty.ItemsSource = p;
+            lstBoxProdukty.ItemsSource = null;
+            lstBoxProdukty.ItemsSource = p;
         }
         private void SortujPoCenie(List<string> lista)
         {
-            
+
             List<Produkt> p1 = new List<Produkt>();
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
-            
+
             for (int i = 0; i < lista.Count; i++)
             {
-                foreach(Produkt item in odczytanyMagazyn.produkty)
+                foreach (Produkt item in odczytanyMagazyn.produkty)
                 {
                     if (item.Nazwa == lista[i])
                     {
                         p1.Add(item);
-                        
+
                         break;
                     }
                 }
@@ -183,8 +177,35 @@ namespace gui
                 lista.Add(produkt.Nazwa);
             }
         }
+        private void btnUsunzMagazynu_Click(object sender, RoutedEventArgs e)
+        {
+            Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
+            if (lstBoxProdukty.SelectedItem == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego produktu.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            List<string> lista = new List<string>();
+            foreach (string item in lstBoxProdukty.SelectedItems)
+            {
+                lista.Add(item);
+            }
+            foreach (string p in lista)
+            {
+                odczytanyMagazyn.produkty.RemoveAll(x=>x.Nazwa.Equals(p));
+            }
+            odczytanyMagazyn.ZapiszDoXml("magazyn.xml");
+
+            List<string> produkty = PobierzProdukty(lblKat.Content.ToString().Replace("Produkty z kategorii: ", ""));
+            lstBoxProdukty.ItemsSource = null; 
+            lstBoxProdukty.ItemsSource = produkty;
+        }
+        private void btnDodajDoMagazynu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
 
-     
+
     }
 }

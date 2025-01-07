@@ -50,7 +50,7 @@ namespace gui
                 
                 if (email == "test@test.com" && haslo == "password123")
                 {
-                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
+                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "user");
                     kategoria.Show();
                     this.Hide();
                 }
@@ -64,7 +64,7 @@ namespace gui
                 
                 if (email == "admin1" && haslo == "admin123")
                 {
-                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk);
+                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk,"admin");
                     kategoria.Show();
                     this.Close();
                 }

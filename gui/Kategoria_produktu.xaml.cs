@@ -21,29 +21,58 @@ namespace gui
     public partial class Kategoria_produktu : Window
     {
         private Koszyk _koszyk;
-        public Kategoria_produktu(Koszyk koszyk)
+        string osoba;
+        public Kategoria_produktu(Koszyk koszyk, string kto)
         {
-            _koszyk= koszyk;
+            osoba = kto;
+            _koszyk = koszyk;
             InitializeComponent();
         }
         private void ClkLaptop(object sender, RoutedEventArgs e)
         {
-            ListaProduktow laptopy = new("Laptopy", _koszyk);
-            laptopy.Show();
-            this.Close();
+            if (osoba == "user")
+            {
+                ListaProduktow laptopy = new("Laptopy", _koszyk);
+                laptopy.Show();
+                this.Close();
+            }
+            else
+            {
+                Admin_ListaProduktów a = new("Laptopy");
+                a.Show();
+                this.Close();
+            }
         }
         private void ClkTablet(object sender, RoutedEventArgs e)
         {
-            ListaProduktow tablety = new("Tablety", _koszyk);
-            tablety.Show();
-            this.Close();
+            if (osoba == "user")
+            {
+                ListaProduktow tablety = new("Tablety", _koszyk);
+                tablety.Show();
+                this.Close();
+            }
+            else
+            {
+                Admin_ListaProduktów a = new("Tablety");
+                a.Show();
+                this.Close();
+            }
         }
         private void ClkSmart(object sender, RoutedEventArgs e)
         {
-            ListaProduktow telefony = new("Smartfony", _koszyk);
-            telefony.Show();
-            this.Close();
-        }
+            if (osoba == "user")
+            {
+                ListaProduktow telefony = new("Smartfony", _koszyk);
+                telefony.Show();
+                this.Close();
+            }
+            else
+            {
+                Admin_ListaProduktów a = new("Smartfony");
+                a.Show();
+                this.Close();
+            }
 
+        }
     }
 }
