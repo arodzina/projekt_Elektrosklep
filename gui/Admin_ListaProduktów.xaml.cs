@@ -202,10 +202,12 @@ namespace gui
         }
         private void btnDodajDoMagazynu_Click(object sender, RoutedEventArgs e)
         {
+            Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             DaneProduktu dane = new(kategoria1, "dodawanie", null);
-            dane.Show();
-            Magazyn odczytanyMagazyn1 = Magazyn.OdczytXml("magazyn.xml");
-            odczytanyMagazyn1.ZapiszDoXml("magazyn.xml");
+            dane.ShowDialog();
+            //Magazyn odczytanyMagazyn1 = Magazyn.OdczytXml("magazyn.xml");
+            odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
+           // odczytanyMagazyn.ZapiszDoXml("magazyn.xml");
             List<string> produkty = PobierzProdukty(lblKat.Content.ToString().Replace("Produkty z kategorii: ", ""));
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = produkty;
@@ -213,24 +215,26 @@ namespace gui
         }
         private void btnAktualizuj_Click(object sender, RoutedEventArgs e)
         {
-            Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             if (lstBoxProdukty.SelectedItem == null)
             {
                 MessageBox.Show("Nie wybrano żadnego produktu.", "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-          
+
             string nazwap = lstBoxProdukty.SelectedItem.ToString();
-            
-            Produkt p = odczytanyMagazyn.produkty.Find(x => x.Nazwa.Equals(nazwap));
-            
-            DaneProduktu dane = new(kategoria1, "aktualizowanie", p);
-            dane.Show();
-            Magazyn odczytanyMagazyn1 = Magazyn.OdczytXml("magazyn.xml");
-            odczytanyMagazyn1.ZapiszDoXml("magazyn.xml");
-            List<string> produkty = PobierzProdukty(lblKat.Content.ToString().Replace("Produkty z kategorii: ", ""));
-            lstBoxProdukty.ItemsSource = null;
-            lstBoxProdukty.ItemsSource = produkty;
+            Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
+            Produkt produkt = odczytanyMagazyn.produkty.FirstOrDefault(p => p.Nazwa == nazwap);
+
+            if (produkt != null)
+            {
+                DaneProduktu dane = new(kategoria1, "aktualizowanie", produkt);
+                dane.ShowDialog();
+                odczytanyMagazyn.ZapiszDoXml("magazyn.xml");
+                List<string> produkty = PobierzProdukty(lblKat.Content.ToString().Replace("Produkty z kategorii: ", ""));
+                lstBoxProdukty.ItemsSource = null;
+                lstBoxProdukty.ItemsSource = produkty;
+            }
         }
+
     }
 }

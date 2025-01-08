@@ -47,7 +47,7 @@ namespace gui
                     Lbl1.Content = "Procesor";
                     Lbl2.Content = "RAM";
                     Lbl3.Content = "Dysk";
-                    Lbl2.Content = "Karta graficzna";
+                    Lbl4.Content = "Karta graficzna";
                 }
                 if (kategoria == "Tablety")
                 {
@@ -64,7 +64,7 @@ namespace gui
                     Lbl1.Content = "Przekątna ekranu";
                     Lbl2.Content = "Aparat";
                     Lbl3.Content = "Pojemność baterii";
-                    Lbl2.Content = "Procesor";
+                    Lbl4.Content = "Procesor";
                 }
             if(funkcja=="dodawanie")
             {
@@ -91,7 +91,7 @@ namespace gui
                     TxtB1.Text=tablet.Wyswietlacz.ToString();
                     TxtB2.Text= tablet.SystemOperacyjny;
                     TxtB3.Text=tablet.CzyRysik.ToString();
-                    TxtB4.Text= laptop.KartaGraficzna;
+                    TxtB4.IsEnabled = false;
 
                 }
                 if (TxtBKate.Text == "Smartfony")
