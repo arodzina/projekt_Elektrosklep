@@ -54,5 +54,9 @@ namespace gui
             logowanie.Show();
             this.Hide();
         }
+        private void MenuItem_Wyjdz_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

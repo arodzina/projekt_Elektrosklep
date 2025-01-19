@@ -70,8 +70,8 @@
             <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
                 <MenuItem Header="Admin" Width="55">
                     <MenuItem Header="Zaloguj" Click="MenuItem_Zaloguj_Click"/>
-                    
-                    <MenuItem Header="Wyjdz"/>
+
+                    <MenuItem Header="Wyjdz" Click="MenuItem_Wyjdz_Click"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
