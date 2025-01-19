@@ -142,12 +142,18 @@ namespace gui
         }
         private void btnSortujNazwa_Click(object sender, RoutedEventArgs e)
         {
+            List<string> produkty = PobierzProdukty(kategoria1);
+            lstBoxProdukty.ItemsSource = produkty;
+            p = produkty;
             SortujPoNazwie(p);
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = p;
         }
         private void btnSortujCena_Click(object sender, RoutedEventArgs e)
         {
+            List<string> produkty = PobierzProdukty(kategoria1);
+            lstBoxProdukty.ItemsSource = produkty;
+            p = produkty;
             SortujPoCenie(p);
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = p;
@@ -208,7 +214,7 @@ namespace gui
             //Magazyn odczytanyMagazyn1 = Magazyn.OdczytXml("magazyn.xml");
             odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
            // odczytanyMagazyn.ZapiszDoXml("magazyn.xml");
-            List<string> produkty = PobierzProdukty(lblKat.Content.ToString().Replace("Produkty z kategorii: ", ""));
+            List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = produkty;
 

@@ -130,11 +130,11 @@ namespace gui
                 laptop.Dysk = s;
                 laptop.KartaGraficzna = TxtB4.Text;
 
-                if (!odczytanyMagazyn.produkty.Contains(laptop))
+                if (!odczytanyMagazyn.produkty.Any(p => p.Nazwa == laptop.Nazwa))
                 {
                     odczytanyMagazyn.produkty.Add(laptop);
                 }
-                
+
             }
             if (TxtBKate.Text == "Tablety")
             {
@@ -149,7 +149,7 @@ namespace gui
                 tablet.CzyRysik = b;
                 laptop.KartaGraficzna = TxtB4.Text;
 
-                if (!odczytanyMagazyn.produkty.Contains(tablet))
+                if (!odczytanyMagazyn.produkty.Any(p => p.Nazwa == tablet.Nazwa))
                 {
                     odczytanyMagazyn.produkty.Add(tablet);
                 }
@@ -168,7 +168,7 @@ namespace gui
                 smartfon.PojemnoscBaterii= r;
                 smartfon.Procesor = TxtB4.Text;
 
-                if (!odczytanyMagazyn.produkty.Contains(smartfon))
+                if (!odczytanyMagazyn.produkty.Any(p => p.Nazwa == smartfon.Nazwa))
                 {
                     odczytanyMagazyn.produkty.Add(smartfon);
                 }
