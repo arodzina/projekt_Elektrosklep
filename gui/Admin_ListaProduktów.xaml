@@ -5,19 +5,19 @@
     <Grid Background="AliceBlue">
         <!-- Definicje wierszy i kolumn -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="101" />
+            <RowDefinition Height="Auto" MinHeight="100" />
             <!-- Automatyczna wysokość wiersza, dostosowuje się do zawartości -->
             <RowDefinition />
             <!-- Wiersz, który zajmuje pozostałą przestrzeń -->
-            <RowDefinition Height="Auto" MinHeight="62.04" />
+            <RowDefinition Height="Auto" MinHeight="60" />
             <!-- Automatyczna wysokość dla tego wiersza -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="251*" />
+            <ColumnDefinition Width="250" />
             <!-- Proporcjonalna szerokość kolumny -->
-            <ColumnDefinition Width="293*" />
+            <ColumnDefinition Width="*" />
             <!-- Proporcjonalna szerokość kolumny -->
-            <ColumnDefinition Width="256*" />
+            <ColumnDefinition Width="250" />
             <!-- Proporcjonalna szerokość kolumny -->
         </Grid.ColumnDefinitions>
 
@@ -51,10 +51,8 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-
-        <!-- Przycisk powrotu do menu - w trzecim wierszu, środkowa kolumna -->
         <Button Click="btnPowrot_Click" Content="Powrót" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
-                Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="23,186,0,0">
+                Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,200,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -63,7 +61,7 @@
             </Button.Background>
         </Button>
         <Button Click="btnSortujNazwa_Click" Content="Sortuj po nazwie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
-        Width="150" Height="40" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="23,0,0,0">
+        Width="150" Height="40" Margin="26,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -72,7 +70,7 @@
             </Button.Background>
         </Button>
         <Button Click="btnUsunzMagazynu_Click" Content="Usuń z magazynu" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
-Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,121,0,0">
+Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,125,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -81,7 +79,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
             </Button.Background>
         </Button>
         <Button Click="btnAktualizuj_Click" Content="Aktualizuj dane" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
-Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,191,0,0">
+Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,200,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -90,7 +88,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
             </Button.Background>
         </Button>
         <Button Click="btnDodajDoMagazynu_Click" Content="Dodaj do magazynu" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
-Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,47,0,0">
+Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,50,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -99,7 +97,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
             </Button.Background>
         </Button>
         <Button Click="btnSortujCena_Click" Content="Sortuj po cenie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
-Width="150" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="23,48,0,0">
+Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,50,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
                 Title="DaneProduktu" Height="420" Width="420" MinHeight="370" MinWidth="320" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="30"/>

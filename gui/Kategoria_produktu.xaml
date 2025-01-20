@@ -41,7 +41,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="3" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="58" FontFamily="Brush Script MT" Grid.ColumnSpan="3" Margin="10,0,10,0"/>
-        <Button x:Name="BtnLaptop" Content="Laptopy" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="21,25,21,34" FontSize="16" FontFamily="Rockwell Nova" Click="ClkLaptop">
+        <Button x:Name="BtnLaptop" Content="Laptopy" Height="30" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="21,25,21,34" FontSize="16" FontFamily="Rockwell Nova" Click="ClkLaptop">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -49,7 +49,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTablet" Content="Tablety" Grid.Column="4" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="16" FontFamily="Rockwell Nova" Margin="21,25,21,34" Click="ClkTablet">
+        <Button x:Name="BtnTablet" Content="Tablety" Height="30" Grid.Column="4" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="16" FontFamily="Rockwell Nova" Margin="21,25,21,34" Click="ClkTablet">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -57,7 +57,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnTelefon" Content="Smartfony" Grid.Column="6" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="16" FontFamily="Rockwell Nova" Margin="0,25,0,34" Click="ClkSmart" HorizontalAlignment="Center" Width="106">
+        <Button x:Name="BtnTelefon" Content="Smartfony" Height="30" Grid.Column="6" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="16" FontFamily="Rockwell Nova" Margin="21,25,21,34" Click="ClkSmart" HorizontalAlignment="Center" Width="106">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
