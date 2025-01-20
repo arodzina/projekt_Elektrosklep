@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
-                Title="DaneProduktu" Height="420" Width="420" MinHeight="370" MinWidth="320" WindowStartupLocation="CenterScreen">
+                Title="DaneProduktu" Height="420" Width="520" MinHeight="370" MinWidth="320" WindowStartupLocation="CenterScreen">
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -32,6 +32,7 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="LblKategoriaProduktu" Content="KATEGORIA" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Right"/>
         <Label x:Name="LblNazwa" Content="NAZWA" FontFamily="Rockwell Nova" Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Right"/>
@@ -49,7 +50,7 @@
         <TextBox x:Name="TxtB2" FontFamily="Rockwell Nova" Grid.Row="11" Grid.Column="2" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="TxtB3" FontFamily="Rockwell Nova" Grid.Row="13" Grid.Column="2" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="TxtB4" FontFamily="Rockwell Nova" Grid.Row="15" Grid.Column="2" HorizontalContentAlignment="Center"/>
-        <Button x:Name="BtnZatwierdz" Content="Zatwierdź" Style="{StaticResource ButtonRound}" Click="Zatwierdz_Click" Grid.Row="17" Grid.Column="0" HorizontalAlignment="Left" Width="140" Foreground="White" FontSize="14" FontFamily="Rockwell Nova" Grid.ColumnSpan="3" Margin="60,0,0,0">
+        <Button x:Name="BtnZatwierdz" Content="Zatwierdź" Style="{StaticResource ButtonRound}" Click="Zatwierdz_Click" Grid.Row="17" Grid.Column="0" HorizontalAlignment="Left" Width="140" Foreground="White" FontSize="14" FontFamily="Rockwell Nova" Grid.ColumnSpan="3" Margin="100,0,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -57,7 +58,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnAnuluj" Click="Anuluj_Click" Content="Anuluj" Style="{StaticResource ButtonRound}" Width="140" Foreground="White" FontFamily="Rockwell Nova" FontSize="14" Grid.Row="17" Grid.Column="2" Margin="60,0,60,0">
+        <Button x:Name="BtnAnuluj" Click="Anuluj_Click" Content="Anuluj" Style="{StaticResource ButtonRound}" Width="140" Foreground="White" FontFamily="Rockwell Nova" FontSize="14" Grid.Row="17" Grid.Column="2" Margin="95,0,90,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

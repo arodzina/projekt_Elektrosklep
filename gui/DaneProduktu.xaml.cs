@@ -90,7 +90,15 @@ namespace gui
                     TxtBOpis.Text= tablet.Opis;
                     TxtB1.Text=tablet.Wyswietlacz.ToString();
                     TxtB2.Text= tablet.SystemOperacyjny;
-                    TxtB3.Text=tablet.CzyRysik.ToString();
+                    if(tablet.CzyRysik==true)
+                    {
+                        TxtB3.Text = "tak";
+                    }
+                    else
+                    {
+                        TxtB3.Text = "nie";
+                    }
+                    //TxtB3.Text=tablet.CzyRysik.ToString();
                     TxtB4.IsEnabled = false;
 
                 }
@@ -138,6 +146,7 @@ namespace gui
             }
             if (TxtBKate.Text == "Tablety")
             {
+                string zmienna;
                 tablet.Nazwa = TxtBNazwa.Text;
                 Double.TryParse(TxtBCena.Text, out double c);
                 tablet.Cena = c;
@@ -145,7 +154,15 @@ namespace gui
                 Double.TryParse(TxtB1.Text, out double p);
                 tablet.Wyswietlacz = p;
                 tablet.SystemOperacyjny = TxtB2.Text;
-                bool.TryParse(TxtB3.Text, out bool b);
+                if(TxtB3.Text == "tak" || TxtB3.Text=="Tak")
+                {
+                    zmienna = "true";
+                }
+                else
+                {
+                    zmienna = "false";
+                }
+                bool.TryParse(zmienna, out bool b);
                 tablet.CzyRysik = b;
                 laptop.KartaGraficzna = TxtB4.Text;
 
