@@ -19,12 +19,15 @@
     <None Remove="assets\phone_icon.png" />
     <None Remove="assets\shopping-cart-shopping.gif" />
     <None Remove="assets\smartphone.png" />
+    <None Remove="assets\sound.mp4" />
+    <None Remove="assets\sound.wav" />
     <None Remove="assets\store.png" />
     <None Remove="assets\tablet.png" />
     <None Remove="assets\tablet2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
@@ -61,6 +64,12 @@
     <Resource Include="assets\smartphone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="assets\sound.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="assets\sound.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="assets\store.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

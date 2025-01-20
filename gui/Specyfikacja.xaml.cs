@@ -4,6 +4,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using WpfAnimatedGif;
+using System.Media;
+using System.Windows.Media;
+using NAudio.Wave;
 
 namespace gui
 {
@@ -43,6 +46,31 @@ namespace gui
             ImageBehavior.SetAnimatedSource(this.gifImage, gifImage);
             
         }
+        private async void PlayAudioWithNAudio(string filePath)
+        {
+            await Task.Run(() =>
+            {
+                try
+                {
+
+                    using (var audioFile = new AudioFileReader(filePath))
+                    using (var outputDevice = new WaveOutEvent())
+                    {
+                        outputDevice.Init(audioFile);
+                        outputDevice.Play();
+
+                        // Czekaj, aż odtwarzanie się zakończy
+                        while (outputDevice.PlaybackState == PlaybackState.Playing)
+                        {
+                            System.Threading.Thread.Sleep(100);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Błąd odtwarzania dźwięku: {ex.Message}");
+                }});
+        }
         private async void btnDodajDoKoszyka_Click(object sender, RoutedEventArgs e)
         {
             string nazwaProduktu = lblNazwa.Text;
@@ -52,7 +80,10 @@ namespace gui
             BtnKoszyk.Visibility = Visibility.Hidden;
             BtnPowrót.Visibility = Visibility.Hidden;
             gifImage.Visibility = Visibility.Visible;
-            await Task.Delay(2000);
+            
+            PlayAudioWithNAudio(@"assets/sound.wav");
+
+            await Task.Delay(3000);
             gifImage.Visibility = Visibility.Collapsed;
             BtnDodaj.Visibility = Visibility.Visible;
             BtnKoszyk.Visibility = Visibility.Visible;
