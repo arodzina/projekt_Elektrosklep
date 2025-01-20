@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
-        Title="Koszyk" Height="450" Width="850">
+        Title="Koszyk" Height="450" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>

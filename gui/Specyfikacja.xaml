@@ -18,7 +18,7 @@
             </StackPanel>
         </ScrollViewer>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
-            <Button x:Name="BtnDodaj" Content="Dodaj do koszyka" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnDodajDoKoszyka_Click" Width="324">
+            <Button x:Name="BtnDodaj" Visibility="Visible" Content="Dodaj do koszyka" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnDodajDoKoszyka_Click" Width="324">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#f33944" Offset="0.0"/>
@@ -26,7 +26,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="BtnPowrót" Content="Powrót" Width="324" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,10,0,10" FontSize="20" FontFamily="Rockwell Nova" Click="btnPowrót_Click">
+            <Button x:Name="BtnPowrót" Visibility="Visible" Content="Powrót" Width="324" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,10,0,10" FontSize="20" FontFamily="Rockwell Nova" Click="btnPowrót_Click">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#f33944" Offset="0.0"/>
@@ -34,7 +34,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="BtnKoszyk" Content="Przejdź do koszyka" Width="324" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnKoszyk_Click">
+            <Button x:Name="BtnKoszyk" Visibility="Visible" Content="Przejdź do koszyka" Width="324" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnKoszyk_Click">
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#f33944" Offset="0.0"/>
@@ -42,6 +42,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <Image Name="gifImage" Visibility="Collapsed" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" />
         </StackPanel>
     </Grid>
 </Window>

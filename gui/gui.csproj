@@ -17,10 +17,15 @@
     <None Remove="assets\laptop_icon.png" />
     <None Remove="assets\login.png" />
     <None Remove="assets\phone_icon.png" />
+    <None Remove="assets\shopping-cart-shopping.gif" />
     <None Remove="assets\smartphone.png" />
     <None Remove="assets\store.png" />
     <None Remove="assets\tablet.png" />
     <None Remove="assets\tablet2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +57,7 @@
     <Resource Include="assets\login.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="assets\shopping-cart-shopping.gif" />
     <Resource Include="assets\smartphone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

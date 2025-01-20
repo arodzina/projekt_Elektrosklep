@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using WpfAnimatedGif;
 
 namespace gui
 {
@@ -36,13 +38,25 @@ namespace gui
                     Margin = new Thickness(0, 0, 0, 10)
                 });
             }
+            var gifUri = new Uri("pack://application:,,,/assets/shopping-cart-shopping.gif");
+            var gifImage = new BitmapImage(gifUri);
+            ImageBehavior.SetAnimatedSource(this.gifImage, gifImage);
+            
         }
-        private void btnDodajDoKoszyka_Click(object sender, RoutedEventArgs e)
+        private async void btnDodajDoKoszyka_Click(object sender, RoutedEventArgs e)
         {
             string nazwaProduktu = lblNazwa.Text;
             _koszyk.DodajProdukt(_produkt);
             MessageBox.Show($"Dodano '{nazwaProduktu}' do koszyka!", "Koszyk", MessageBoxButton.OK, MessageBoxImage.Information);
-           
+            BtnDodaj.Visibility = Visibility.Hidden;
+            BtnKoszyk.Visibility = Visibility.Hidden;
+            BtnPowrót.Visibility = Visibility.Hidden;
+            gifImage.Visibility = Visibility.Visible;
+            await Task.Delay(2000);
+            gifImage.Visibility = Visibility.Collapsed;
+            BtnDodaj.Visibility = Visibility.Visible;
+            BtnKoszyk.Visibility = Visibility.Visible;
+            BtnPowrót.Visibility = Visibility.Visible;
         }
         private void btnPowrót_Click(object sender, RoutedEventArgs e)
         {
