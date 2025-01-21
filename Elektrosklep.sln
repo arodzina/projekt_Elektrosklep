@@ -5,12 +5,7 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "logika_aplikacji", "logika_aplikacji\logika_aplikacji.csproj", "{E4206411-8B81-40FF-BE35-97687D7B64CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gui", "gui\gui.csproj", "{1346689D-2772-4F86-8D6A-7D381CE114CE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{6E0E89DD-0B78-49AD-B616-B0F91094F15C}"
-	ProjectSection(SolutionItems) = preProject
-		App.config = App.config
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gui", "gui\gui.csproj", "{1346689D-2772-4F86-8D6A-7D381CE114CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testy", "Testy\Testy.csproj", "{26BEB5AC-ADA9-4991-B895-9CDD7A673194}"
 EndProject

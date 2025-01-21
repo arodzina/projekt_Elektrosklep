@@ -98,7 +98,7 @@ namespace gui
                     {
                         TxtB3.Text = "nie";
                     }
-                    //TxtB3.Text=tablet.CzyRysik.ToString();
+                   
                     TxtB4.IsEnabled = false;
 
                 }
