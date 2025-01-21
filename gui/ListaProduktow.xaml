@@ -62,8 +62,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnSortujNazwa_Click" Content="Sortuj po nazwie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
-        Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,153,0,0">
+        <Button Click="btnSortujNazwa_Click" Content="Sortuj po nazwie A-Z" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
+        Width="168" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,153,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -71,8 +71,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnSortujCena_Click" Content="Sortuj po cenie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
-Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,76,0,0">
+        <Button Click="btnSortujCena_Click" Content="Sortuj po cenie rosnąco" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
+Width="168" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,76,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

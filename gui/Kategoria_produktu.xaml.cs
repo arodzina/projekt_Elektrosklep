@@ -74,5 +74,11 @@ namespace gui
             }
 
         }
+        private void btnKoszyk_Click(object sender, RoutedEventArgs e)
+        {
+            Koszyk_produktów k = new(_koszyk);
+            k.Show();
+            this.Close();
+        }
     }
 }
