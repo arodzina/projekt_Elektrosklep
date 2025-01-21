@@ -241,6 +241,9 @@ namespace gui
                 lstBoxProdukty.ItemsSource = produkty;
             }
         }
-
-    }
+        private void btnKoniec_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        }
 }
