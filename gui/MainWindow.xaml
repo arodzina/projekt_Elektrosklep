@@ -37,7 +37,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="1" Grid.Row="1" Content="Witamy w Elektrosklepie!" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Brush Script MT" Height="100" VerticalAlignment="Center"/>
-        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,70,67,3" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click">
+        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,67,67,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click" Height="45">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -45,7 +45,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnRabat" Content="Informacja o rabacie" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,70,67,4" FontSize="20" FontFamily="Rockwell Nova" Click="btnRabatClick">
+        <Button x:Name="BtnRabat" Content="Informacja o rabacie" Grid.Column="1" Height="45" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,71,67,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnRabatClick">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -53,7 +53,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,16,67,58" FontSize="20" FontFamily="Rockwell Nova" Click="btnGosc_Click">
+        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Height="45" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,13,67,58" FontSize="20" FontFamily="Rockwell Nova" Click="btnGosc_Click">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
