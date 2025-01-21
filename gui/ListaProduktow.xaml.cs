@@ -67,7 +67,7 @@ namespace gui
             {
                 var smartfony = doc.Descendants("Produkt")
                             .Where(p => p.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value == "Smartfon")
-                            .Select(p => p.Element("Nazwa")?.Value)
+                            .Select(p => p.Element("Nazwa")?.Value )
                             .Where(nazwa => nazwa != null)
                             .ToList();
                 return smartfony;
