@@ -27,6 +27,14 @@ namespace gui
             osoba = kto;
             _koszyk = koszyk;
             InitializeComponent();
+            if(osoba=="admin")
+            {
+                BtnKoszyk.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                BtnKoszyk.Visibility = Visibility.Visible;
+            }
         }
         private void ClkLaptop(object sender, RoutedEventArgs e)
         {

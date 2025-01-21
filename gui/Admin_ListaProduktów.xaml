@@ -105,5 +105,14 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Button Click="btnKoniec_Click" Content="Zakończ działanie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="1" 
+        Width="180" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,264,0,0" Grid.RowSpan="2" >
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

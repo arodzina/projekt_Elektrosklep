@@ -72,5 +72,13 @@
         <TextBlock x:Name="TxtCenaPrzed" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="130" FontFamily="Rockwell Nova" FontSize="20"/>
         <TextBlock x:Name="TxtRabat" Grid.Row="4" Grid.Column="2" Height="35" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="130" FontFamily="Rockwell Nova" FontSize="20" Margin="0,45,0,0"/>
         <TextBlock x:Name="TxtCenaPo" Grid.Row="4" Grid.Column="2" Height="35" Margin="0,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.361,0.595" HorizontalAlignment="Center" Width="130" FontFamily="Rockwell Nova" FontSize="20"/>
+        <Button x:Name="BtnZakoncz" Grid.Column="1" Grid.Row="4" Width="200" Content="Zakończ zakupy" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="18" FontFamily="Rockwell Nova" Click="ClkZakoncz" Margin="42,53,388,20">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

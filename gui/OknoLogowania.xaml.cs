@@ -21,6 +21,7 @@ namespace gui
     public partial class OknoLogowania : Window
     {
         private Koszyk _koszyk;
+        Dictionary<string, string> daneLogowania;
         string osoba;
         public OknoLogowania(Koszyk koszyk, string kto)
         {
@@ -28,7 +29,12 @@ namespace gui
             InitializeComponent();
             osoba = kto;
             _koszyk = koszyk;
-            if(osoba=="user")
+            daneLogowania= new();
+            daneLogowania.Add("email1", "password1");
+            daneLogowania.Add("email2", "password2");
+            daneLogowania.Add("email3", "password3");
+            daneLogowania.Add("email4", "password4");
+            if (osoba=="user")
             {
                 LblLogin.Content = "Wpisz swój e-mail:";
                 LblHasło.Content = "Wpisz swoje hasło:";
@@ -47,32 +53,46 @@ namespace gui
 
             if (osoba == "user")
             {
-                
-                if (email == "test@test.com" && haslo == "password123")
+
+
+                if (daneLogowania.TryGetValue(email, out string p))
                 {
-                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "user");
-                    kategoria.Show();
-                    this.Hide();
+                    if (haslo == p)
+                    {
+                        Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "user");
+                        kategoria.Show();
+                        this.Hide();
+                    }
                 }
+
                 else
                 {
-                    MessageBox.Show("Niepoprawne dane logowania.");
+                    MessageBox.Show("Niepoprawne dane logowania.", "Błąd logowania", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+
+                
             }
             else
             {
-                
+
                 if (email == "admin1" && haslo == "admin123")
                 {
-                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk,"admin");
+                    Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "admin");
                     kategoria.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Niepoprawne dane logowania.");
+                    MessageBox.Show("Niepoprawne dane logowania.", "Błąd logowania", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+        
+        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new();
+            main.Show();
+            this.Close();
         }
     }
 }

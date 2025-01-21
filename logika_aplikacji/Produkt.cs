@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -7,11 +8,18 @@ namespace Elektrosklep
     // Klasa bazowa
     public abstract class Produkt : IComparable<Produkt>, IEquatable<Produkt>, ICloneable
     {
+
+        
+        
+
+
+
         // Właściwości produktu
         public string Nazwa { get; set; }
         public double Cena { get; set; }
         public string Opis { get; set; }
         [XmlAttribute]
+        [Key]
         public int Id { get;  set; }  // Zmieniamy dostęp do Id na tylko do odczytu
         public double Rabat { get; set; }
 

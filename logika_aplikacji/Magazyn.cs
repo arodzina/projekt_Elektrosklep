@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Elektrosklep
 {
@@ -14,7 +17,7 @@ namespace Elektrosklep
         
         
    
-        public List<Produkt> produkty; // Lista produktów w magazynie
+        public virtual List<Produkt> produkty { get; set; }// Lista produktów w magazynie
 
         public Magazyn()
         {
@@ -149,5 +152,37 @@ namespace Elektrosklep
                 return null;
             }
         }
+
+        // Funkcja zapisująca produkty do bazy danych
+        public void ZapiszDoBazy()
+
+        {
+            // Wczytanie łańcucha połączenia z App.config bezpośrednio w metodzie
+            string connectionString = ConfigurationManager.ConnectionStrings["ElektrosklepDB"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (var context = new MagazynContext())
+                {
+                    // Dodajemy wszystkie produkty do bazy danych
+                    context.Produkty.AddRange(produkty);
+                    context.SaveChanges(); // Zapisujemy zmiany do bazy
+
+                    Console.WriteLine("Produkty zostały zapisane do bazy danych.");
+                }
+                Console.WriteLine("Połączenie z bazą danych zostało nawiązane.");
+            }
+           
+        }
+
     }
+    public class MagazynContext : DbContext
+    {
+        public DbSet<Produkt> Produkty { get; set; }
+
+        public MagazynContext() : base("name=ElektrosklepDB") { }
+    }
+
+
 }

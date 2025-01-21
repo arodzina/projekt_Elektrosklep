@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gui"
         mc:Ignorable="d"
-        Title="Logowanie" Height="450" Width="370" WindowStartupLocation="CenterScreen">
+        Title="Logowanie" Height="500" Width="370" WindowStartupLocation="CenterScreen">
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="193"/>
@@ -32,6 +32,14 @@
         <!-- TextBox na hasło -->
         <PasswordBox Name="txtHaslo"  VerticalContentAlignment="Center" FontSize="14" FontFamily="Rockwell Nova" Height="34" VerticalAlignment="Center" HorizontalAlignment="Center" Width="188" Grid.Row="3" Grid.Column="1"/>
         <Button x:Name="BtnZaloguj" Content="Zaloguj się" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,23,0,60" FontSize="18" FontFamily="Rockwell Nova" Click="btnZaloguj_Click" Grid.Column="1" Grid.Row="4">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#ec2075" Offset="0.0"/>
+                    <GradientStop Color="#f33944" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnPowrot" Content="Powrót" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,84,0,-1" FontSize="18" FontFamily="Rockwell Nova" Click="btnPowrot_Click" Grid.Column="1" Grid.Row="4">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

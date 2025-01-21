@@ -77,7 +77,11 @@ namespace gui
             OdswiezListe();
         }
 
+        private void ClkZakoncz(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
 
+        }
     }
     
 }
