@@ -19,7 +19,6 @@
     <None Remove="assets\phone_icon.png" />
     <None Remove="assets\shopping-cart-shopping.gif" />
     <None Remove="assets\smartphone.png" />
-    <None Remove="assets\sound.mp4" />
     <None Remove="assets\sound.wav" />
     <None Remove="assets\store.png" />
     <None Remove="assets\tablet.png" />
@@ -63,9 +62,6 @@
     <Resource Include="assets\shopping-cart-shopping.gif" />
     <Resource Include="assets\smartphone.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="assets\sound.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Content Include="assets\sound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
