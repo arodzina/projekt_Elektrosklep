@@ -35,13 +35,6 @@ namespace gui
             this.Hide();
         }
 
-        private void btnZarejestruj_Click(object sender, RoutedEventArgs e)
-        {
-            OknoRejestracji rejestracja = new OknoRejestracji(Koszyk);
-            rejestracja.Show();
-            this.Hide();
-        }
-
         private void btnGosc_Click(object sender, RoutedEventArgs e)
         {
             Kategoria_produktu menu = new Kategoria_produktu(Koszyk, "user");
@@ -53,6 +46,10 @@ namespace gui
             OknoLogowania logowanie = new OknoLogowania(Koszyk, "admin");
             logowanie.Show();
             this.Hide();
+        }
+        private void btnRabatClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Przy zakupie produktów z każdej z trzech kategorii przyznawany jest rabat w wysokości 10% na całe zamówienie!","RABAT", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         private void MenuItem_Wyjdz_Click(object sender, RoutedEventArgs e)
         {

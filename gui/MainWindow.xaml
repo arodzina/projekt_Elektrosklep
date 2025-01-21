@@ -45,7 +45,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnZarejestruj" Content="Zarejestruj się" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,9,67,64" FontSize="20" FontFamily="Rockwell Nova" Click="btnZarejestruj_Click">
+        <Button x:Name="BtnRabat" Content="Informacja o rabacie" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,9,67,64" FontSize="20" FontFamily="Rockwell Nova" Click="btnRabatClick">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
