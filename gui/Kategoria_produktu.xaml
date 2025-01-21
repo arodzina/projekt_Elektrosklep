@@ -41,6 +41,14 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="3" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="58" FontFamily="Brush Script MT" Grid.ColumnSpan="3" Margin="10,0,10,0"/>
+        <Button x:Name="BtnKoszyk" Visibility="Visible" Grid.Column="6" Grid.Row="1" Content="Koszyk" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnKoszyk_Click" Margin="102,24,57,23" Grid.ColumnSpan="2">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#f33944" Offset="0.0"/>
+                    <GradientStop Color="#ec2075" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         <Button x:Name="BtnLaptop" Content="Laptopy" Height="30" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="21,25,21,34" FontSize="16" FontFamily="Rockwell Nova" Click="ClkLaptop">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -68,7 +76,7 @@
         <Image Grid.Row="2" Source="\assets\laptop2.png" RenderTransformOrigin="-0.392,0.415" Margin="85,27,29,21" Grid.ColumnSpan="2"/>
         <Image Grid.Column="4" Grid.Row="2" Source="\assets\ipad.png" RenderTransformOrigin="-0.392,0.415" Margin="5,45,14,0" Height="153" VerticalAlignment="Top"/>
         <Image Grid.Column="6" Grid.Row="1" Source="\assets\ikonka_smartfon.png" Margin="0,81,0,87" HorizontalAlignment="Center" Width="108" Grid.RowSpan="3"/>
-        
+
 
     </Grid>
 </Window>
