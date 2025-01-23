@@ -85,7 +85,7 @@ namespace gui
                 string cena = produkt.Element("Cena")?.Value;
                 string opis = produkt.Element("Opis")?.Value;
                 string typ = produkt.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value;
-                // Dodatkowe pola w zależności od typu produktu
+                
                 Dictionary<string, string> dodatkowePola = new();
                 if (typ == "Laptop")
                 {

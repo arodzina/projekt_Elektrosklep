@@ -25,7 +25,7 @@ namespace gui
             lblCena.Text = $"{cena} PLN";
             lblOpis.Text = opis;
             _produkt= wybrany;
-            // Dodaj dynamicznie dodatkowe pola
+            
             foreach (var pole in dodatkowePola)
             {
                 stackDodatkowePola.Children.Add(new TextBlock
@@ -59,7 +59,7 @@ namespace gui
                         outputDevice.Init(audioFile);
                         outputDevice.Play();
 
-                        // Czekaj, aż odtwarzanie się zakończy
+                        
                         while (outputDevice.PlaybackState == PlaybackState.Playing)
                         {
                             System.Threading.Thread.Sleep(100);
