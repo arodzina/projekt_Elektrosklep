@@ -12,11 +12,9 @@ using System.Windows.Shapes;
 
 namespace gui
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+    
         public Magazyn magazyn = new Magazyn();
         public Koszyk Koszyk { get; private set; }
         
@@ -26,7 +24,6 @@ namespace gui
             Koszyk = new();
             Koszyk.produkty = new();
             magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
-           
         }
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
         {
@@ -34,14 +31,13 @@ namespace gui
             logowanie.Show();
             this.Hide();
         }
-
         private void btnGosc_Click(object sender, RoutedEventArgs e)
         {
             Kategoria_produktu menu = new Kategoria_produktu(Koszyk, "user");
             menu.Show();
             this.Hide();
         }
-       private void MenuItem_Zaloguj_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Zaloguj_Click(object sender, RoutedEventArgs e)
         {
             OknoLogowania logowanie = new OknoLogowania(Koszyk, "admin");
             logowanie.Show();
