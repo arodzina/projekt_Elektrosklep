@@ -25,7 +25,7 @@ namespace gui
             lblCena.Text = $"{cena} PLN";
             lblOpis.Text = opis;
             _produkt= wybrany;
-            // Dodaj dynamicznie dodatkowe pola
+            
             foreach (var pole in dodatkowePola)
             {
                 stackDodatkowePola.Children.Add(new TextBlock
@@ -59,7 +59,7 @@ namespace gui
                         outputDevice.Init(audioFile);
                         outputDevice.Play();
 
-                        // Czekaj, aż odtwarzanie się zakończy
+                        
                         while (outputDevice.PlaybackState == PlaybackState.Playing)
                         {
                             System.Threading.Thread.Sleep(100);
@@ -71,7 +71,7 @@ namespace gui
                     MessageBox.Show($"Błąd odtwarzania dźwięku: {ex.Message}");
                 }});
         }
-        private async void btnDodajDoKoszyka_Click(object sender, RoutedEventArgs e)
+        private async void btnDodajDoKoszykaClick(object sender, RoutedEventArgs e)
         {
             string nazwaProduktu = lblNazwa.Text;
             _koszyk.DodajProdukt(_produkt);
@@ -89,12 +89,12 @@ namespace gui
             BtnKoszyk.Visibility = Visibility.Visible;
             BtnPowrót.Visibility = Visibility.Visible;
         }
-        private void btnPowrót_Click(object sender, RoutedEventArgs e)
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
 
             this.Close();
         }
-        private void btnKoszyk_Click(object sender, RoutedEventArgs e)
+        private void btnKoszykClick(object sender, RoutedEventArgs e)
         {
             
             Koszyk_produktów k = new(_koszyk);

@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace gui
 {
-    /// <summary>
-    /// Logika interakcji dla klasy OknoLogowania.xaml
-    /// </summary>
     public partial class OknoLogowania : Window
     {
         private Koszyk _koszyk;
@@ -25,7 +22,6 @@ namespace gui
         string osoba;
         public OknoLogowania(Koszyk koszyk, string kto)
         {
-          
             InitializeComponent();
             osoba = kto;
             _koszyk = koszyk;
@@ -45,16 +41,12 @@ namespace gui
                 LblHasło.Content = "Wpisz hasło:";
             }
         }
-
-        private void btnZaloguj_Click(object sender, RoutedEventArgs e)
+        private void btnZalogujClick(object sender, RoutedEventArgs e)
         {
             string email = txtEmail.Text;
             string haslo = txtHaslo.Password;
-
             if (osoba == "user")
             {
-
-
                 if (daneLogowania.TryGetValue(email, out string p))
                 {
                     if (haslo == p)
@@ -64,17 +56,13 @@ namespace gui
                         this.Hide();
                     }
                 }
-
                 else
                 {
                     MessageBox.Show("Niepoprawne dane logowania.", "Błąd logowania", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-                
+                } 
             }
             else
             {
-
                 if (email == "admin1" && haslo == "admin123")
                 {
                     Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "admin");
@@ -87,8 +75,7 @@ namespace gui
                 }
             }
         }
-        
-        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
             MainWindow main = new();
             main.Show();

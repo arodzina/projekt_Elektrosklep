@@ -13,7 +13,6 @@
             <RowDefinition Height="117"/>
             <RowDefinition Height="116"/>
             <RowDefinition Height="67"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -37,7 +36,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="1" Grid.Row="1" Content="Witamy w Elektrosklepie!" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Brush Script MT" Height="100" VerticalAlignment="Center"/>
-        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,67,67,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnZaloguj_Click" Height="45">
+        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Grid.Column="1" Grid.Row="2" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,67,67,0" FontSize="20" FontFamily="Rockwell Nova" Click="btnZalogujClick" Height="45">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -53,7 +52,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Height="45" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,13,67,58" FontSize="20" FontFamily="Rockwell Nova" Click="btnGosc_Click">
+        <Button x:Name="BtnGosc" Content="Kontynuuj jako gość" Height="45" Grid.Column="1" Grid.Row="3" Foreground="White" Style="{StaticResource ButtonRound}" Margin="67,13,67,58" FontSize="20" FontFamily="Rockwell Nova" Click="btnGoscClick">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -64,21 +63,15 @@
         <Image Grid.Column="2" Grid.Row="3" Source="/assets\laptop_icon.png"  Margin="22,13,20,63" Grid.RowSpan="2"/>
         <Image Grid.Column="1" Grid.Row="2" Source="/assets\smartphone.png"  Height="110" VerticalAlignment="Center" Margin="399,0,-1,0" Grid.ColumnSpan="2"/>
         <Image Grid.Column="0" Grid.Row="3" Margin="-22,13,378,4" Grid.ColumnSpan="2" Source="/assets\tablet.png"/>
-
         <Image Grid.Row="2" Source="/assets\store.png" Margin="-10,10,390,9" Grid.ColumnSpan="2"/>
         <DockPanel Grid.Column="0" Grid.Row="0">
             <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
                 <MenuItem Header="Admin" Width="55">
-                    <MenuItem Header="Zaloguj" Click="MenuItem_Zaloguj_Click"/>
-
-                    <MenuItem Header="Wyjdz" Click="MenuItem_Wyjdz_Click"/>
+                    <MenuItem Header="Zaloguj" Click="MenuItemZalogujClick"/>
+                    <MenuItem Header="Wyjdz" Click="MenuItemWyjdzClick"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
         </DockPanel>
-
-
-
     </Grid>
-
 </Window>

@@ -28,15 +28,12 @@ namespace gui
         {
             InitializeComponent();
             lblKat.Content = $"Produkty z kategorii: {kategoria}";
-            // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
             lstBoxProdukty.ItemsSource = produkty;
             p = produkty;
             kategoria1 = kategoria;
         }
 
-
-        // Metoda zwracająca listę z nazwami produktów z odowiedniej kategorii
         private List<string> PobierzProdukty(string kategoria)
         {
             string xmlFilePath = "magazyn.xml";
@@ -92,7 +89,7 @@ namespace gui
                 string cena = produkt.Element("Cena")?.Value;
                 string opis = produkt.Element("Opis")?.Value;
                 string typ = produkt.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value;
-                // Dodatkowe pola w zależności od typu produktu
+             
                 Dictionary<string, string> dodatkowePola = new();
                 if (typ == "Laptop")
                 {
@@ -128,8 +125,8 @@ namespace gui
 
             }
         }
-        // Obsługa przycisku powrotu
-        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+      
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
             // Powrót do menu sklepu
             Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "admin");
@@ -140,7 +137,7 @@ namespace gui
         {
             lista.Sort((x, y) => (x.CompareTo(y)));
         }
-        private void btnSortujNazwa_Click(object sender, RoutedEventArgs e)
+        private void btnSortujNazwaClick(object sender, RoutedEventArgs e)
         {
             List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = produkty;
@@ -149,7 +146,7 @@ namespace gui
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = p;
         }
-        private void btnSortujCena_Click(object sender, RoutedEventArgs e)
+        private void btnSortujCenaClick(object sender, RoutedEventArgs e)
         {
             List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = produkty;
@@ -183,7 +180,7 @@ namespace gui
                 lista.Add(produkt.Nazwa);
             }
         }
-        private void btnUsunzMagazynu_Click(object sender, RoutedEventArgs e)
+        private void btnUsunzMagazynuClick(object sender, RoutedEventArgs e)
         {
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             if (lstBoxProdukty.SelectedItem == null)
@@ -206,20 +203,20 @@ namespace gui
             lstBoxProdukty.ItemsSource = null; 
             lstBoxProdukty.ItemsSource = produkty;
         }
-        private void btnDodajDoMagazynu_Click(object sender, RoutedEventArgs e)
+        private void btnDodajDoMagazynuClick(object sender, RoutedEventArgs e)
         {
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             DaneProduktu dane = new(kategoria1, "dodawanie", null);
             dane.ShowDialog();
-            //Magazyn odczytanyMagazyn1 = Magazyn.OdczytXml("magazyn.xml");
+           
             odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
-           // odczytanyMagazyn.ZapiszDoXml("magazyn.xml");
+
             List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = produkty;
 
         }
-        private void btnAktualizuj_Click(object sender, RoutedEventArgs e)
+        private void btnAktualizujClick(object sender, RoutedEventArgs e)
         {
             if (lstBoxProdukty.SelectedItem == null)
             {
@@ -241,7 +238,7 @@ namespace gui
                 lstBoxProdukty.ItemsSource = produkty;
             }
         }
-        private void btnKoniec_Click(object sender, RoutedEventArgs e)
+        private void btnKoniecClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }

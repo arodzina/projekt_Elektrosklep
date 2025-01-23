@@ -16,31 +16,21 @@ using System.Xml.Linq;
 
 namespace gui
 {
-    /// <summary>
-    /// Logika interakcji dla klasy ListaProduktow.xaml
-    /// </summary>
     public partial class ListaProduktow : Window
     {
         private Koszyk _koszyk;
         private List<string> p = new();
        
-        
         public ListaProduktow(string kategoria, Koszyk koszyk)
         {
             InitializeComponent();
             _koszyk = koszyk;
-            // Ustawienie nagłówka z nazwą kategorii
             lblKategoria.Content = $"Produkty z kategorii: {kategoria}";
-
-            // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
             listBoxProdukty.ItemsSource = produkty;
-            p = produkty;
-            //listBoxProdukty.DisplayMemberPath = "Nazwa";
-            
+            p = produkty;  
         }
 
-        // Metoda zwracająca listę z nazwami produktów z odowiedniej kategorii
         private List<string> PobierzProdukty(string kategoria)
         {
             string xmlFilePath = "magazyn.xml";
@@ -82,7 +72,6 @@ namespace gui
         {
             if (listBoxProdukty.SelectedItem == null)
                 return;
-            //Produkt pr = listBoxProdukty.SelectedItem as Produkt;
             string wybranyProdukt = listBoxProdukty.SelectedItem.ToString();
             string xmlFilePath = "magazyn.xml";
             XDocument doc = XDocument.Load(xmlFilePath);
@@ -96,7 +85,7 @@ namespace gui
                 string cena = produkt.Element("Cena")?.Value;
                 string opis = produkt.Element("Opis")?.Value;
                 string typ = produkt.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value;
-                // Dodatkowe pola w zależności od typu produktu
+                
                 Dictionary<string, string> dodatkowePola = new();
                 if (typ == "Laptop")
                 {
@@ -128,16 +117,13 @@ namespace gui
                         break;
                     }
                 }
-                // nowe okno z pełną specyfikacją
                 Specyfikacja specyfikacja = new Specyfikacja(nazwa, cena, opis, dodatkowePola,wybrany,_koszyk);
                 specyfikacja.Show();
                 
             }
         }
-        // Obsługa przycisku powrotu
-        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
-            // Powrót do menu sklepu
             Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "user");
             kategoria.Show();
             this.Close();
@@ -146,13 +132,13 @@ namespace gui
         {
             lista.Sort((x,y)=>(x.CompareTo(y)));
         }
-        private void btnSortujNazwa_Click(object sender, RoutedEventArgs e) 
+        private void btnSortujNazwaClick(object sender, RoutedEventArgs e) 
         {
             SortujPoNazwie(p);
             listBoxProdukty.ItemsSource = null; 
             listBoxProdukty.ItemsSource = p;
         }
-        private void btnSortujCena_Click(object sender, RoutedEventArgs e)
+        private void btnSortujCenaClick(object sender, RoutedEventArgs e)
         {
             SortujPoCenie(p);
             listBoxProdukty.ItemsSource = null;
@@ -160,7 +146,6 @@ namespace gui
         }
         private void SortujPoCenie(List<string> lista)
         {
-            
             List<Produkt> p1 = new List<Produkt>();
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             
@@ -171,7 +156,6 @@ namespace gui
                     if (item.Nazwa == lista[i])
                     {
                         p1.Add(item);
-                        
                         break;
                     }
                 }

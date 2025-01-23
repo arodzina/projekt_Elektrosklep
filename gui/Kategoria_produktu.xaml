@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gui" xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -41,7 +41,7 @@
             </Rectangle>
         </Border>
         <Label x:Name="LblNazwaSklepu" Grid.Column="3" Grid.Row="1" Content="Elekrosklep" FontStyle="Italic" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="58" FontFamily="Brush Script MT" Grid.ColumnSpan="3" Margin="10,0,10,0"/>
-        <Button x:Name="BtnKoszyk" Visibility="Visible" Grid.Column="6" Content="Koszyk" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnKoszyk_Click" Margin="136,0,23,4" Grid.ColumnSpan="2">
+        <Button x:Name="BtnKoszyk" Visibility="Visible" Grid.Column="6" Content="Koszyk" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="20" FontFamily="Rockwell Nova" Click="btnKoszykClick" Margin="136,0,23,4" Grid.ColumnSpan="2">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#f33944" Offset="0.0"/>
