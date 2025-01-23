@@ -13,7 +13,6 @@
             <RowDefinition Height="117"/>
             <RowDefinition Height="116"/>
             <RowDefinition Height="67"/>
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -64,21 +63,15 @@
         <Image Grid.Column="2" Grid.Row="3" Source="/assets\laptop_icon.png"  Margin="22,13,20,63" Grid.RowSpan="2"/>
         <Image Grid.Column="1" Grid.Row="2" Source="/assets\smartphone.png"  Height="110" VerticalAlignment="Center" Margin="399,0,-1,0" Grid.ColumnSpan="2"/>
         <Image Grid.Column="0" Grid.Row="3" Margin="-22,13,378,4" Grid.ColumnSpan="2" Source="/assets\tablet.png"/>
-
         <Image Grid.Row="2" Source="/assets\store.png" Margin="-10,10,390,9" Grid.ColumnSpan="2"/>
         <DockPanel Grid.Column="0" Grid.Row="0">
             <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Width="55" Height="20" >
                 <MenuItem Header="Admin" Width="55">
                     <MenuItem Header="Zaloguj" Click="MenuItem_Zaloguj_Click"/>
-
                     <MenuItem Header="Wyjdz" Click="MenuItem_Wyjdz_Click"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
         </DockPanel>
-
-
-
     </Grid>
-
 </Window>
