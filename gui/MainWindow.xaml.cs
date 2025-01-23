@@ -25,13 +25,13 @@ namespace gui
             Koszyk.produkty = new();
             magazyn = (Magazyn)Magazyn.OdczytXml("magazyn.xml");
         }
-        private void btnZaloguj_Click(object sender, RoutedEventArgs e)
+        private void btnZalogujClick(object sender, RoutedEventArgs e)
         {
             OknoLogowania logowanie = new OknoLogowania(Koszyk, "user");
             logowanie.Show();
             this.Hide();
         }
-        private void btnGosc_Click(object sender, RoutedEventArgs e)
+        private void btnGoscClick(object sender, RoutedEventArgs e)
         {
             Kategoria_produktu menu = new Kategoria_produktu(Koszyk, "user");
             menu.Show();
