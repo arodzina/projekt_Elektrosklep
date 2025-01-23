@@ -28,15 +28,12 @@ namespace gui
         {
             InitializeComponent();
             lblKat.Content = $"Produkty z kategorii: {kategoria}";
-            // Załadowanie listy produktów na podstawie kategorii
             List<string> produkty = PobierzProdukty(kategoria);
             lstBoxProdukty.ItemsSource = produkty;
             p = produkty;
             kategoria1 = kategoria;
         }
 
-
-        // Metoda zwracająca listę z nazwami produktów z odowiedniej kategorii
         private List<string> PobierzProdukty(string kategoria)
         {
             string xmlFilePath = "magazyn.xml";
@@ -92,7 +89,7 @@ namespace gui
                 string cena = produkt.Element("Cena")?.Value;
                 string opis = produkt.Element("Opis")?.Value;
                 string typ = produkt.Attribute(XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance") + "type")?.Value;
-                // Dodatkowe pola w zależności od typu produktu
+             
                 Dictionary<string, string> dodatkowePola = new();
                 if (typ == "Laptop")
                 {
@@ -128,7 +125,7 @@ namespace gui
 
             }
         }
-        // Obsługa przycisku powrotu
+      
         private void btnPowrot_Click(object sender, RoutedEventArgs e)
         {
             // Powrót do menu sklepu
@@ -211,9 +208,9 @@ namespace gui
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             DaneProduktu dane = new(kategoria1, "dodawanie", null);
             dane.ShowDialog();
-            //Magazyn odczytanyMagazyn1 = Magazyn.OdczytXml("magazyn.xml");
+           
             odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
-           // odczytanyMagazyn.ZapiszDoXml("magazyn.xml");
+
             List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = produkty;

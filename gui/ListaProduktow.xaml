@@ -5,6 +5,7 @@
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="101" />
+            <RowDefinition/>
             <RowDefinition Height="Auto" MinHeight="62.04" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
