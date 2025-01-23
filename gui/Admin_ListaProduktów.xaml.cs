@@ -126,7 +126,7 @@ namespace gui
             }
         }
       
-        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
             // Powrót do menu sklepu
             Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "admin");
@@ -137,7 +137,7 @@ namespace gui
         {
             lista.Sort((x, y) => (x.CompareTo(y)));
         }
-        private void btnSortujNazwa_Click(object sender, RoutedEventArgs e)
+        private void btnSortujNazwaClick(object sender, RoutedEventArgs e)
         {
             List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = produkty;
@@ -146,7 +146,7 @@ namespace gui
             lstBoxProdukty.ItemsSource = null;
             lstBoxProdukty.ItemsSource = p;
         }
-        private void btnSortujCena_Click(object sender, RoutedEventArgs e)
+        private void btnSortujCenaClick(object sender, RoutedEventArgs e)
         {
             List<string> produkty = PobierzProdukty(kategoria1);
             lstBoxProdukty.ItemsSource = produkty;
@@ -180,7 +180,7 @@ namespace gui
                 lista.Add(produkt.Nazwa);
             }
         }
-        private void btnUsunzMagazynu_Click(object sender, RoutedEventArgs e)
+        private void btnUsunzMagazynuClick(object sender, RoutedEventArgs e)
         {
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             if (lstBoxProdukty.SelectedItem == null)
@@ -203,7 +203,7 @@ namespace gui
             lstBoxProdukty.ItemsSource = null; 
             lstBoxProdukty.ItemsSource = produkty;
         }
-        private void btnDodajDoMagazynu_Click(object sender, RoutedEventArgs e)
+        private void btnDodajDoMagazynuClick(object sender, RoutedEventArgs e)
         {
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml("magazyn.xml");
             DaneProduktu dane = new(kategoria1, "dodawanie", null);
@@ -216,7 +216,7 @@ namespace gui
             lstBoxProdukty.ItemsSource = produkty;
 
         }
-        private void btnAktualizuj_Click(object sender, RoutedEventArgs e)
+        private void btnAktualizujClick(object sender, RoutedEventArgs e)
         {
             if (lstBoxProdukty.SelectedItem == null)
             {
@@ -238,7 +238,7 @@ namespace gui
                 lstBoxProdukty.ItemsSource = produkty;
             }
         }
-        private void btnKoniec_Click(object sender, RoutedEventArgs e)
+        private void btnKoniecClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }

@@ -63,7 +63,7 @@ namespace gui
         
             OdswiezListe();
         }
-        private void btnZwiekszLiczbe_Click(object sender, RoutedEventArgs e)
+        private void btnZwiekszLiczbeClick(object sender, RoutedEventArgs e)
         {
             Produkt p = LstBKoszyk.SelectedItem as Produkt;
             if(LstBKoszyk.SelectedItem == null)

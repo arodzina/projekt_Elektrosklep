@@ -115,11 +115,11 @@ namespace gui
                 }
             }
         }
-        private void Anuluj_Click(object sender, RoutedEventArgs e)
+        private void AnulujClick(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-        private void Zatwierdz_Click(object sender, RoutedEventArgs e)
+        private void ZatwierdzClick(object sender, RoutedEventArgs e)
         {
             string xmlFilePath = "magazyn.xml";
             Magazyn odczytanyMagazyn = Magazyn.OdczytXml(xmlFilePath);

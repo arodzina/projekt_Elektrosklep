@@ -41,7 +41,7 @@ namespace gui
                 LblHasło.Content = "Wpisz hasło:";
             }
         }
-        private void btnZaloguj_Click(object sender, RoutedEventArgs e)
+        private void btnZalogujClick(object sender, RoutedEventArgs e)
         {
             string email = txtEmail.Text;
             string haslo = txtHaslo.Password;
@@ -75,7 +75,7 @@ namespace gui
                 }
             }
         }
-        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
             MainWindow main = new();
             main.Show();

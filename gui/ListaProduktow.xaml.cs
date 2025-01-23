@@ -122,7 +122,7 @@ namespace gui
                 
             }
         }
-        private void btnPowrot_Click(object sender, RoutedEventArgs e)
+        private void btnPowrotClick(object sender, RoutedEventArgs e)
         {
             Kategoria_produktu kategoria = new Kategoria_produktu(_koszyk, "user");
             kategoria.Show();
@@ -132,13 +132,13 @@ namespace gui
         {
             lista.Sort((x,y)=>(x.CompareTo(y)));
         }
-        private void btnSortujNazwa_Click(object sender, RoutedEventArgs e) 
+        private void btnSortujNazwaClick(object sender, RoutedEventArgs e) 
         {
             SortujPoNazwie(p);
             listBoxProdukty.ItemsSource = null; 
             listBoxProdukty.ItemsSource = p;
         }
-        private void btnSortujCena_Click(object sender, RoutedEventArgs e)
+        private void btnSortujCenaClick(object sender, RoutedEventArgs e)
         {
             SortujPoCenie(p);
             listBoxProdukty.ItemsSource = null;

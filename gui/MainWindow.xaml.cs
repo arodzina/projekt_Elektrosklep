@@ -37,7 +37,7 @@ namespace gui
             menu.Show();
             this.Hide();
         }
-        private void MenuItem_Zaloguj_Click(object sender, RoutedEventArgs e)
+        private void MenuItemZalogujClick(object sender, RoutedEventArgs e)
         {
             OknoLogowania logowanie = new OknoLogowania(Koszyk, "admin");
             logowanie.Show();
@@ -47,7 +47,7 @@ namespace gui
         {
             MessageBox.Show("Przy zakupie produktów z każdej z trzech kategorii przyznawany jest rabat w wysokości 10% na całe zamówienie!","RABAT", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-        private void MenuItem_Wyjdz_Click(object sender, RoutedEventArgs e)
+        private void MenuItemWyjdzClick(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

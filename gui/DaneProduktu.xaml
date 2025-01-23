@@ -50,7 +50,7 @@
         <TextBox x:Name="TxtB2" FontFamily="Rockwell Nova" Grid.Row="11" Grid.Column="2" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="TxtB3" FontFamily="Rockwell Nova" Grid.Row="13" Grid.Column="2" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="TxtB4" FontFamily="Rockwell Nova" Grid.Row="15" Grid.Column="2" HorizontalContentAlignment="Center"/>
-        <Button x:Name="BtnZatwierdz" Content="Zatwierdź" Style="{StaticResource ButtonRound}" Click="Zatwierdz_Click" Grid.Row="17" Grid.Column="0" HorizontalAlignment="Left" Width="140" Foreground="White" FontSize="14" FontFamily="Rockwell Nova" Grid.ColumnSpan="3" Margin="100,0,0,0">
+        <Button x:Name="BtnZatwierdz" Content="Zatwierdź" Style="{StaticResource ButtonRound}" Click="ZatwierdzClick" Grid.Row="17" Grid.Column="0" HorizontalAlignment="Left" Width="140" Foreground="White" FontSize="14" FontFamily="Rockwell Nova" Grid.ColumnSpan="3" Margin="100,0,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -58,7 +58,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnAnuluj" Click="Anuluj_Click" Content="Anuluj" Style="{StaticResource ButtonRound}" Width="140" Foreground="White" FontFamily="Rockwell Nova" FontSize="14" Grid.Row="17" Grid.Column="2" Margin="95,0,90,0">
+        <Button x:Name="BtnAnuluj" Click="AnulujClick" Content="Anuluj" Style="{StaticResource ButtonRound}" Width="140" Foreground="White" FontFamily="Rockwell Nova" FontSize="14" Grid.Row="17" Grid.Column="2" Margin="95,0,90,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>

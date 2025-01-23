@@ -1,7 +1,7 @@
 ﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="gui.Admin_ListaProduktów"
-        Title="Admin_ListaProduktów" Height="450" Width="800">
+        Title="Admin_ListaProduktów" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="AliceBlue">
        
         <Grid.RowDefinitions>
@@ -42,7 +42,7 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <Button Click="btnPowrot_Click" Content="Powrót" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
+        <Button Click="btnPowrotClick" Content="Powrót" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
                 Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,200,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -51,7 +51,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnSortujNazwa_Click" Content="Sortuj po nazwie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
+        <Button Click="btnSortujNazwaClick" Content="Sortuj po nazwie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
         Width="150" Height="40" Margin="26,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -60,7 +60,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnUsunzMagazynu_Click" Content="Usuń z magazynu" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
+        <Button Click="btnUsunzMagazynuClick" Content="Usuń z magazynu" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
 Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,125,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -69,7 +69,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnAktualizuj_Click" Content="Aktualizuj dane" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
+        <Button Click="btnAktualizujClick" Content="Aktualizuj dane" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
 Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,200,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -78,7 +78,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnDodajDoMagazynu_Click" Content="Dodaj do magazynu" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
+        <Button Click="btnDodajDoMagazynuClick" Content="Dodaj do magazynu" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" 
 Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="74,50,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -87,7 +87,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnSortujCena_Click" Content="Sortuj po cenie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
+        <Button Click="btnSortujCenaClick" Content="Sortuj po cenie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="2" 
 Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,50,0,0">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -96,7 +96,7 @@ Width="150" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margi
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Click="btnKoniec_Click" Content="Zakończ działanie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="1" 
+        <Button Click="btnKoniecClick" Content="Zakończ działanie" Foreground="White" Style="{StaticResource ButtonRound}" FontSize="14" FontFamily="Rockwell Nova" Grid.Row="1" Grid.Column="1" 
         Width="180" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,264,0,0" Grid.RowSpan="2" >
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">

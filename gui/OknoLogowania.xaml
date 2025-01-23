@@ -23,7 +23,7 @@
         <TextBox Name="txtEmail"   VerticalContentAlignment="Center" FontSize="14" FontFamily="Rockwell Nova" HorizontalAlignment="Center" VerticalAlignment="Center" Width="188" Height="36" Grid.Row="1" Grid.Column="1"/>
         <Label x:Name="LblHasło"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontFamily="Rockwell Nova" FontSize="18" Grid.Column="1" Height="35" Grid.Row="2" Width="188" Grid.RowSpan="2"/>
         <PasswordBox Name="txtHaslo"  VerticalContentAlignment="Center" FontSize="14" FontFamily="Rockwell Nova" Height="34" VerticalAlignment="Center" HorizontalAlignment="Center" Width="188" Grid.Row="3" Grid.Column="1"/>
-        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,23,0,60" FontSize="18" FontFamily="Rockwell Nova" Click="btnZaloguj_Click" Grid.Column="1" Grid.Row="4">
+        <Button x:Name="BtnZaloguj" Content="Zaloguj się" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,23,0,60" FontSize="18" FontFamily="Rockwell Nova" Click="btnZalogujClick" Grid.Column="1" Grid.Row="4">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
@@ -31,7 +31,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnPowrot" Content="Powrót" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,84,0,-1" FontSize="18" FontFamily="Rockwell Nova" Click="btnPowrot_Click" Grid.Column="1" Grid.Row="4">
+        <Button x:Name="BtnPowrot" Content="Powrót" Foreground="White" Style="{StaticResource ButtonRound}" Margin="0,84,0,-1" FontSize="18" FontFamily="Rockwell Nova" Click="btnPowrotClick" Grid.Column="1" Grid.Row="4">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                     <GradientStop Color="#ec2075" Offset="0.0"/>
