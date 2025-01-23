@@ -8,12 +8,15 @@ namespace Elektrosklep
 {
     public class Zamowienie
     {
+        // Właściwości
         public int Id { get; set; } // Unikalny identyfikator zamówienia
         public Klient Klient { get; set; } // Klient, który złożył zamówienie
         public List<Produkt> Produkty { get; set; } // Produkty w zamówieniu
-        public string Status { get; set; } // Status zamówienia (np. "Nowe", "W realizacji", "Zrealizowane")
+        public string Status { get; set; } // Status zamówienia 
         public DateTime DataZamowienia { get; set; } // Data złożenia zamówienia
 
+
+        // Konstruktory
         public Zamowienie(int id, Klient klient)
         {
             Id = id;
@@ -23,12 +26,14 @@ namespace Elektrosklep
             DataZamowienia = DateTime.Now; // Data złożenia zamówienia to obecna data
         }
 
+
         // Dodaj produkt do zamówienia
         public void DodajProdukt(Produkt produkt)
         {
             Produkty.Add(produkt);
             Console.WriteLine($"Dodano {produkt.Nazwa} do zamówienia.");
         }
+
 
         // Oblicz całkowitą cenę zamówienia (wliczając rabaty)
         public double ObliczCalkowitaCene()
@@ -41,6 +46,7 @@ namespace Elektrosklep
             return suma;
         }
 
+
         // Zaktualizuj status zamówienia
         public void ZaktualizujStatus(string nowyStatus)
         {
@@ -48,11 +54,11 @@ namespace Elektrosklep
             Console.WriteLine($"Status zamówienia zaktualizowano na: {Status}");
         }
 
+
         // Wyświetl szczegóły zamówienia
         public void WyswietlSzczegoly()
         {
             Console.WriteLine($"Zamówienie numer {Id}");
-            //Console.WriteLine($"Klient: {Imie}, Adres: {Adres}, Email: {Email}, Telefon: {NumerTelefonu}");
             Console.WriteLine($"Data zamówienia: {DataZamowienia}");
             Console.WriteLine($"Status zamówienia: {Status}");
             Console.WriteLine("Produkty w zamówieniu:");

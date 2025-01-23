@@ -8,12 +8,14 @@ namespace Elektrosklep
 {
     public class Platnosc
     {
+        // Właściwości
         public int Id { get; set; } // Unikalny identyfikator płatności
         public Zamowienie Zamowienie { get; set; } // Powiązane zamówienie
         public double Kwota { get; set; } // Kwota do zapłaty
         public string MetodaPlatnosci { get; set; } // Metoda płatności (np. "Karta kredytowa", "Przelew bankowy", "Płatność online")
         public string Status { get; set; } // Status płatności ("Oczekuje", "Zrealizowana", "Nieudana")
         public DateTime DataPlatnosci { get; set; } // Data płatności
+
 
         // Konstruktor
         public Platnosc(Zamowienie zamowienie, string metodaPlatnosci)
@@ -24,6 +26,7 @@ namespace Elektrosklep
             Status = "Oczekuje"; // Domyślnie status płatności to "Oczekuje"
             DataPlatnosci = DateTime.MinValue; // Brak daty przed dokonaniem płatności
         }
+
 
         // Dokonaj płatności
         public void DokonajPlatnosci()
@@ -41,6 +44,7 @@ namespace Elektrosklep
             }
         }
 
+
         // Anulowanie płatności
         public void AnulujPlatnosc()
         {
@@ -55,6 +59,7 @@ namespace Elektrosklep
                 Console.WriteLine("Nie można anulować płatności, ponieważ została już zrealizowana lub anulowana.");
             }
         }
+
 
         // Wyświetlanie szczegółów płatności
         public void WyswietlSzczegolyPlatnosci()

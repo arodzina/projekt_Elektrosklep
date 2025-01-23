@@ -8,11 +8,14 @@ namespace Elektrosklep
 {
     public class Laptop : Produkt
     {
+        // Właściwości
         public string Procesor { get; set; }
         public int RAM { get; set; }
         public int Dysk { get; set; }
         public string KartaGraficzna { get; set; }
 
+
+        // Konstruktory
         public Laptop( string nazwa, double cena, string opis, string procesor, int ram, int dysk, string kartaGraficzna)
             : base( nazwa, cena, opis)
         {
@@ -22,6 +25,8 @@ namespace Elektrosklep
             KartaGraficzna = kartaGraficzna;
         }
         public Laptop() { }
+
+
         // Implementacja metody abstrakcyjnej
         public override void WyswietlSzczegoly()
         {

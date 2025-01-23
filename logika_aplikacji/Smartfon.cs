@@ -8,11 +8,14 @@ namespace Elektrosklep
 {
     public class Smartfon : Produkt
     {
+        // Właściwości
         public double PrzekatnaEkranu { get; set; } // Rozmiar ekranu w calach
         public string Aparat { get; set; } // Opis aparatu
         public int PojemnoscBaterii { get; set; } // Pojemność baterii w mAh
         public string Procesor { get; set; }
 
+
+        // Konstruktory
         public Smartfon( string nazwa, double cena, string opis, double przekatnaEkranu, string aparat, int pojemnoscBaterii, string procesor)
             : base( nazwa, cena, opis)
         {
@@ -22,6 +25,8 @@ namespace Elektrosklep
             Procesor = procesor;
         }
         public Smartfon() { }
+
+
         // Implementacja metody abstrakcyjnej
         public override void WyswietlSzczegoly()
         {

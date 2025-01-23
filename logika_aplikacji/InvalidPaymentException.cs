@@ -14,11 +14,13 @@ namespace Elektrosklep
         {
         }
 
+
         // Konstruktor z komunikatem
         public InvalidPaymentException(string message)
             : base(message)
         {
         }
+
 
         // Konstruktor z komunikatem i wyjątkiem wewnętrznym
         public InvalidPaymentException(string message, Exception inner)

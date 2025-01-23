@@ -9,14 +9,18 @@ namespace Elektrosklep
 {
     public class Koszyk
     {
+        // Właściwości
         public ObservableCollection<Produkt> produkty { get; set; } = new ObservableCollection<Produkt>();
         private bool rabatZastosowany; // Pole do sprawdzania, czy rabat został zastosowany
 
+
+        // Konstruktory
         public Koszyk()
         {
             produkty = new ObservableCollection<Produkt>();
             rabatZastosowany = false; // Początkowo rabat nie jest zastosowany
         }
+
 
         // Dodaj produkt do koszyka
         public void DodajProdukt(Produkt produkt)
@@ -27,8 +31,6 @@ namespace Elektrosklep
         {
             produkty.Remove(produkt);
         }
-
-
 
 
         // Zastosowanie rabatu, jeśli w koszyku są produkty z każdej kategorii
@@ -56,6 +58,7 @@ namespace Elektrosklep
             }
         }
 
+        // Cena przed rabatem
         public double CalkowitaCenaPrzedRabatem()
         {
             double suma = 0;
@@ -66,7 +69,8 @@ namespace Elektrosklep
             return suma;
         }
 
-        // Oblicz całkowitą cenę po rabacie
+
+        // Cena po rabacie
         public double ObliczCalkowitaCene()
         {
             double suma = 0;
@@ -77,7 +81,8 @@ namespace Elektrosklep
             return suma;
         }
 
-        // Oblicz wartość rabatu w PLN
+
+        // Wartość rabatu
         public double ObliczWartoscRabatu()
         {
             double sumaRabatu = 0;
@@ -87,6 +92,7 @@ namespace Elektrosklep
             }
             return sumaRabatu;
         }
+
 
         // Wyświetl zawartość koszyka
         public void WyswietlKoszyk()

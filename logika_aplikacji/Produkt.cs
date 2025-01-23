@@ -9,24 +9,20 @@ namespace Elektrosklep
     public abstract class Produkt : IComparable<Produkt>, IEquatable<Produkt>, ICloneable
     {
 
-        
-        
-
-
-
-        // Właściwości produktu
+        // Właściwości
         public string Nazwa { get; set; }
         public double Cena { get; set; }
         public string Opis { get; set; }
+
         [XmlAttribute]
         [Key]
-        public int Id { get;  set; }  // Zmieniamy dostęp do Id na tylko do odczytu
+        public int Id { get;  set; }  
         public double Rabat { get; set; }
 
         // Statyczna zmienna do śledzenia ostatniego użytego Id
         private static int ostatnieId = 0;
 
-        // Konstruktor
+        // Konstruktory
         public Produkt(string nazwa, double cena, string opis)
         {
             // Przypisanie Id na podstawie ostatniego użytego Id
@@ -37,10 +33,13 @@ namespace Elektrosklep
             Opis = opis;
         }
         public Produkt() { }
+
+
         public double CenaPoRabacie()
         {
             return Cena * (1 - Rabat / 100); // Zwraca cenę po rabacie
         }
+
 
         // Metoda do zapisu produktu do pliku XML
         public void ZapiszDoPliku(string sciezka)

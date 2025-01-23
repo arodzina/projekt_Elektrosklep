@@ -8,15 +8,15 @@ namespace Elektrosklep
 {
     public class Klient
     {
+        // Właściwości
         public int Id { get; set; } // Unikalny identyfikator klienta
         public string Imie { get; set; } // Imię klienta
         public string Nazwisko { get; set; } // Nazwisko klienta
         public string Email { get; set; } // E-mail klienta
         public string NumerTelefonu { get; set; } // Numer telefonu klienta
-        public List<string> Adresy { get; set; } // Lista adresów klienta (do wysyłki)
+        public List<string> Adresy { get; set; } // Lista adresów klienta (do wysyłki)        
+        public List<Zamowienie> HistoriaZamowien { get; set; } // Lista zamówień klienta (historia zakupów)
 
-        // Lista zamówień klienta (historia zakupów)
-        public List<Zamowienie> HistoriaZamowien { get; set; }
 
         // Konstruktor
         public Klient(int id, string imie, string nazwisko, string email, string numerTelefonu)
@@ -30,6 +30,7 @@ namespace Elektrosklep
             HistoriaZamowien = new List<Zamowienie>(); // Początkowo brak zamówień
         }
 
+
         // Dodaj adres do klienta
         public void DodajAdres(string adres)
         {
@@ -37,12 +38,14 @@ namespace Elektrosklep
             Console.WriteLine($"Adres {adres} został dodany do konta klienta {Imie} {Nazwisko}.");
         }
 
+
         // Dodaj zamówienie do historii klienta
         public void DodajZamowienie(Zamowienie zamowienie)
         {
             HistoriaZamowien.Add(zamowienie);
             Console.WriteLine($"Zamówienie ID {zamowienie.Id} zostało dodane do historii klienta {Imie} {Nazwisko}.");
         }
+
 
         // Wyświetl historię zamówień
         public void WyswietlHistorieZamowien()

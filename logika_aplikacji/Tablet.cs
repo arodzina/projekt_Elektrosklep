@@ -8,10 +8,13 @@ namespace Elektrosklep
 {
     public class Tablet : Produkt
     {
+        // Właściwości
         public double Wyswietlacz { get; set; } // Rozmiar wyświetlacza w calach
         public string SystemOperacyjny { get; set; }
         public bool CzyRysik { get; set; } // Czy obsługuje rysik
 
+
+        // Konstruktory 
         public Tablet( string nazwa, double cena, string opis, double wyswietlacz, string systemOperacyjny, bool czyRysik)
             : base( nazwa, cena, opis)
         {
@@ -21,6 +24,8 @@ namespace Elektrosklep
         }
 
         public Tablet() { }
+
+
         // Implementacja metody abstrakcyjnej
         public override void WyswietlSzczegoly()
         {

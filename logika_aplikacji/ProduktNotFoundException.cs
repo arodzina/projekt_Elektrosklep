@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Elektrosklep
 {
+
     // Klasa wyjątków dla nieznalezionego produktu
     public class ProduktNotFoundException : Exception
     {

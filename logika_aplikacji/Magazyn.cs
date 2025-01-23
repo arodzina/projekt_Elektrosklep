@@ -14,15 +14,16 @@ namespace Elektrosklep
    
     public class Magazyn
     {
-        
-        
-   
+        // Właściwości
         public virtual List<Produkt> produkty { get; set; }// Lista produktów w magazynie
 
+
+        // Konstruktory
         public Magazyn()
         {
             produkty = new List<Produkt>(); // Inicjalizacja listy produktów
         }
+
 
         // Dodaj produkt do magazynu
         public void DodajProdukt(Produkt produkt, int ilosc)
@@ -49,6 +50,7 @@ namespace Elektrosklep
             }
         }
 
+
         // Usuń produkt z magazynu
         public void UsunProdukt(int id)
         {
@@ -63,6 +65,7 @@ namespace Elektrosklep
                 Console.WriteLine("Nie znaleziono produktu w magazynie.");
             }
         }
+
 
         // Zaktualizuj ilość produktu
         public void ZaktualizujIloscProduktu(int id, int nowaIlosc)
@@ -79,6 +82,7 @@ namespace Elektrosklep
             }
         }
 
+
         // Sprawdź dostępność produktu w magazynie
         public void SprawdzDostepnosc(int id)
         {
@@ -92,6 +96,7 @@ namespace Elektrosklep
                 Console.WriteLine($"Produkt {produkt.Nazwa} jest dostępny w magazynie.");
             }
         }
+
 
         // Wyświetl wszystkie produkty w magazynie
         public void WyswietlProdukty()
@@ -110,12 +115,15 @@ namespace Elektrosklep
             }
         }
 
+
         // Metoda do pobierania produktów według kategorii
         public List<Produkt> PobierzProduktyZKategorii(string kategoria)
         {
             // Filtruje produkty według kategorii
             return produkty.Where(p => p.GetType().Name == kategoria).ToList();
         }
+
+
         // Metoda zapisująca magazyn do pliku XML
         public void ZapiszDoXml(string sciezka)
         {
@@ -133,6 +141,8 @@ namespace Elektrosklep
                 Console.WriteLine($"Błąd podczas zapisu do pliku XML: {ex.Message}");
             }
         }
+
+
         // Wczytaj magazyn z pliku XML
         public static Magazyn? OdczytXml(string sciezka)
         {
@@ -153,11 +163,12 @@ namespace Elektrosklep
             }
         }
 
-        // Funkcja zapisująca produkty do bazy danych
+
+        // Metoda zapisująca produkty do bazy danych
         public void ZapiszDoBazy()
 
         {
-            // Wczytanie łańcucha połączenia z App.config bezpośrednio w metodzie
+            // Wczytanie łańcucha połączenia z App.config 
             string connectionString = ConfigurationManager.ConnectionStrings["ElektrosklepDB"].ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -177,6 +188,8 @@ namespace Elektrosklep
         }
 
     }
+
+    // Klasa do zapisu do bazy danych
     public class MagazynContext : DbContext
     {
         public DbSet<Produkt> Produkty { get; set; }
